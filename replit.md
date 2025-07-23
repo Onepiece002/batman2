@@ -1,8 +1,18 @@
-# Portfolio Website and Blog
+# Portfolio Website and Blog - Static Version
 
 ## Overview
 
-This is a modern, secure portfolio website and blog built with a full-stack TypeScript architecture using React, Express, and PostgreSQL. The application features a Peter McKinnon-inspired dark theme with smooth parallax animations, user authentication via Replit Auth, and a comprehensive admin dashboard for content management.
+This is a modern, responsive portfolio website and blog built with React, TypeScript, and Tailwind CSS. The application has been converted to a static site for Netlify deployment, featuring a Peter McKinnon-inspired dark theme with smooth parallax animations, 10 sample blog posts, and a comprehensive portfolio gallery with 15 categorized images.
+
+## Recent Changes (January 23, 2025)
+
+✓ **Static Site Conversion**: Removed database and authentication dependencies
+✓ **Content Population**: Added 10 detailed blog posts about photography
+✓ **Portfolio Gallery**: Added 15 portfolio images across 8 categories  
+✓ **Footer Component**: Created comprehensive footer with social links
+✓ **Netlify Configuration**: Added netlify.toml for deployment
+✓ **Static Contact Form**: Converted to mailto-based contact form
+✓ **Build Optimization**: Optimized for static deployment
 
 ## User Preferences
 

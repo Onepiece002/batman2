@@ -4,24 +4,16 @@ import Navigation from "@/components/Navigation";
 import ParallaxSection from "@/components/ParallaxSection";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import BlogCard from "@/components/BlogCard";
-import { useQuery } from "@tanstack/react-query";
+import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import type { BlogPost, PortfolioImage } from "@shared/schema";
+import { blogPosts, portfolioImages } from "@/data/staticData";
 
 export default function Landing() {
-  const { data: blogPosts } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog/posts"],
-  });
-
-  const { data: portfolioImages } = useQuery<PortfolioImage[]>({
-    queryKey: ["/api/portfolio/images"],
-  });
-
   // Featured images - first 4 from portfolio
-  const featuredImages = portfolioImages?.slice(0, 4) || [];
+  const featuredImages = portfolioImages.slice(0, 4);
   
-  // Latest blog posts - first 3
-  const latestPosts = blogPosts?.slice(0, 3) || [];
+  // Latest blog posts - first 3 published posts
+  const latestPosts = blogPosts.filter(post => post.published).slice(0, 3);
 
   useEffect(() => {
     // Intersection Observer for fade-in animations
@@ -155,6 +147,8 @@ export default function Landing() {
           </p>
         </motion.div>
       </ParallaxSection>
+      
+      <Footer />
     </div>
   );
 }

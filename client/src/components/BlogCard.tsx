@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import type { BlogPost } from "@shared/schema";
+import type { BlogPost } from "@/data/staticData";
 
 interface BlogCardProps {
   post: BlogPost;

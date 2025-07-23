@@ -1,15 +1,13 @@
 import { useParams } from "wouter";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
-import { useQuery } from "@tanstack/react-query";
-import type { BlogPost } from "@shared/schema";
+import Footer from "@/components/Footer";
+import { blogPosts, type BlogPost } from "@/data/staticData";
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
-
-  const { data: post, isLoading, error } = useQuery<BlogPost>({
-    queryKey: ["/api/blog/posts/slug", slug],
-  });
+  
+  const post = blogPosts.find(p => p.slug === slug && p.published);
 
   const formatDate = (dateString: string | Date | null) => {
     if (!dateString) return "Date not available";
@@ -20,18 +18,7 @@ export default function BlogPostPage() {
     });
   };
 
-  if (isLoading) {
-    return (
-      <div className="bg-dark-primary text-text-primary min-h-screen">
-        <Navigation />
-        <div className="pt-24 flex justify-center items-center">
-          <div className="text-text-secondary">Loading blog post...</div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !post) {
+  if (!post) {
     return (
       <div className="bg-dark-primary text-text-primary min-h-screen">
         <Navigation />
@@ -86,10 +73,24 @@ export default function BlogPostPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="prose prose-lg prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          >
+            {post.content.split('\n').map((paragraph, index) => {
+              if (paragraph.startsWith('## ')) {
+                return <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-white">{paragraph.substring(3)}</h2>;
+              }
+              if (paragraph.startsWith('# ')) {
+                return <h1 key={index} className="text-3xl font-bold mt-8 mb-4 text-white">{paragraph.substring(2)}</h1>;
+              }
+              if (paragraph.trim() === '') {
+                return <br key={index} />;
+              }
+              return <p key={index} className="mb-4 text-text-secondary leading-relaxed">{paragraph}</p>;
+            })}
+          </motion.div>
         </article>
       </div>
+      
+      <Footer />
     </div>
   );
 }

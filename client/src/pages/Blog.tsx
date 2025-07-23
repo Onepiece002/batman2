@@ -2,32 +2,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import BlogCard from "@/components/BlogCard";
-import { useQuery } from "@tanstack/react-query";
-import type { BlogPost } from "@shared/schema";
+import Footer from "@/components/Footer";
+import { blogPosts, type BlogPost } from "@/data/staticData";
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
-
-  const { data: posts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog/posts"],
-  });
-
-  const totalPosts = posts?.length || 0;
+  
+  const posts = blogPosts.filter(post => post.published);
+  const totalPosts = posts.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = posts?.slice(startIndex, startIndex + postsPerPage) || [];
-
-  if (isLoading) {
-    return (
-      <div className="bg-dark-primary text-text-primary min-h-screen">
-        <Navigation />
-        <div className="pt-24 flex justify-center items-center">
-          <div className="text-text-secondary">Loading blog posts...</div>
-        </div>
-      </div>
-    );
-  }
+  const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
 
   return (
     <div className="bg-dark-primary text-text-primary">
@@ -81,6 +67,8 @@ export default function Blog() {
           )}
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

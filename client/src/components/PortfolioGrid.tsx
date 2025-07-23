@@ -1,43 +1,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import type { PortfolioImage } from "@shared/schema";
+import { portfolioImages, portfolioCategories } from "@/data/staticData";
 
 export default function PortfolioGrid() {
   const [activeFilter, setActiveFilter] = useState("all");
 
-  const { data: images, isLoading } = useQuery<PortfolioImage[]>({
-    queryKey: ["/api/portfolio/images"],
-  });
+  const filters = portfolioCategories.map(cat => ({
+    key: cat,
+    label: cat.toUpperCase()
+  }));
 
-  const filters = [
-    { key: "all", label: "ALL" },
-    { key: "portrait", label: "PORTRAITS" },
-    { key: "urban", label: "URBAN" },
-    { key: "landscape", label: "LANDSCAPE" },
-    { key: "commercial", label: "COMMERCIAL" },
-    { key: "wedding", label: "WEDDING" },
-  ];
-
-  const filteredImages = images?.filter(
+  const filteredImages = portfolioImages.filter(
     (image) => activeFilter === "all" || image.category === activeFilter
   );
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center py-20">
-        <div className="text-text-secondary">Loading portfolio...</div>
-      </div>
-    );
-  }
-
-  if (!images || images.length === 0) {
-    return (
-      <div className="text-center py-20">
-        <p className="text-text-secondary text-lg">No portfolio images available.</p>
-      </div>
-    );
-  }
 
   return (
     <div>
@@ -62,7 +37,7 @@ export default function PortfolioGrid() {
 
       {/* Portfolio Grid - Masonry Layout */}
       <div className="grid-masonry">
-        {filteredImages?.map((image, index) => (
+        {filteredImages.map((image, index) => (
           <motion.div
             key={image.id}
             initial={{ opacity: 0, y: 20 }}

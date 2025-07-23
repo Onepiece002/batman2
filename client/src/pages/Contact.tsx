@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,8 +13,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
@@ -23,26 +22,6 @@ export default function Contact() {
     email: "",
     projectType: "",
     message: "",
-  });
-
-  const contactMutation = useMutation({
-    mutationFn: async (data: typeof formData) => {
-      await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", projectType: "", message: "" });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -55,7 +34,16 @@ export default function Contact() {
       });
       return;
     }
-    contactMutation.mutate(formData);
+    
+    // For static deployment, create a mailto link with the form data
+    const subject = encodeURIComponent(`Contact Form: ${formData.projectType || "General Inquiry"}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nProject Type: ${formData.projectType}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:hello@photographer.com?subject=${subject}&body=${body}`;
+    
+    toast({
+      title: "Email client opened!",
+      description: "Your default email client should open with the message pre-filled.",
+    });
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -142,10 +130,9 @@ export default function Contact() {
                 
                 <Button
                   type="submit"
-                  disabled={contactMutation.isPending}
                   className="w-full btn-primary"
                 >
-                  {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  Send Message
                 </Button>
               </form>
             </motion.div>
@@ -193,6 +180,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

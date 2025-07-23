@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import PortfolioGrid from "@/components/PortfolioGrid";
+import Footer from "@/components/Footer";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -53,6 +54,8 @@ export default function Portfolio() {
           </motion.div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

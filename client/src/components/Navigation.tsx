@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [location] = useLocation();
-  const { user, isAuthenticated } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => location === path;
@@ -25,13 +17,7 @@ export default function Navigation() {
     { path: "/contact", label: "CONTACT" },
   ];
 
-  const handleLogout = () => {
-    window.location.href = "/api/logout";
-  };
 
-  const handleLogin = () => {
-    window.location.href = "/api/login";
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm border-b border-border-dark">
@@ -60,40 +46,6 @@ export default function Navigation() {
                   {item.label}
                 </Link>
               ))}
-
-              {/* Auth Section */}
-              {isAuthenticated ? (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm" className="text-white hover:text-gray-300">
-                      <User className="h-4 w-4 mr-2" />
-                      {user?.firstName || "User"}
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="bg-dark-card border-border-dark">
-                    <DropdownMenuItem asChild>
-                      <Link href="/profile" className="text-white hover:text-gray-300">
-                        Profile
-                      </Link>
-                    </DropdownMenuItem>
-                    {user?.isAdmin && (
-                      <DropdownMenuItem asChild>
-                        <Link href="/admin" className="text-white hover:text-gray-300">
-                          Admin Dashboard
-                        </Link>
-                      </DropdownMenuItem>
-                    )}
-                    <DropdownMenuItem onClick={handleLogout} className="text-white hover:text-gray-300">
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sign Out
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Button onClick={handleLogin} className="btn-primary">
-                  SIGN IN
-                </Button>
-              )}
             </div>
           </div>
 
@@ -130,43 +82,6 @@ export default function Navigation() {
               {item.label}
             </Link>
           ))}
-
-          {/* Mobile Auth Section */}
-          <div className="pt-4 border-t border-border-dark">
-            {isAuthenticated ? (
-              <div className="space-y-4">
-                <Link
-                  href="/profile"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-lg font-medium text-text-secondary hover:text-white transition-colors"
-                >
-                  Profile
-                </Link>
-                {user?.isAdmin && (
-                  <Link
-                    href="/admin"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-lg font-medium text-text-secondary hover:text-white transition-colors"
-                  >
-                    Admin Dashboard
-                  </Link>
-                )}
-                <button
-                  onClick={handleLogout}
-                  className="block text-lg font-medium text-text-secondary hover:text-white transition-colors"
-                >
-                  Sign Out
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={handleLogin}
-                className="block text-lg font-medium text-white hover:text-gray-300 transition-colors"
-              >
-                SIGN IN
-              </button>
-            )}
-          </div>
         </div>
       </div>
     </nav>
