@@ -24,16 +24,6 @@ export default function ParallaxSection({
 
   return (
     <div ref={ref} className={`relative ${height} flex items-center justify-center overflow-hidden ${className}`}>
-      <motion.div
-        style={{
-          y,
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-        className="absolute inset-0 w-full h-full"
-      />
       <div className="relative z-10 text-center">{children}</div>
     </div>
   );
