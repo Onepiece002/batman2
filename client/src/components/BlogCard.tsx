@@ -39,9 +39,6 @@ export default function BlogCard({ post, index }: BlogCardProps) {
           {formatDate(post.createdAt)} • 5 min read
         </div>
         <h3 className="text-xl font-semibold mb-3 text-white leading-tight">{post.title}</h3>
-        <p className="text-text-secondary mb-6 flex-1 line-clamp-3">
-          {post.excerpt || `${post.content.substring(0, 120)}...`}
-        </p>
         <Link href={`/blog/${post.slug}`}>
           <button className="btn-secondary w-full">
             Read More
