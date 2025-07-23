@@ -117,43 +117,45 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-white tracking-wide">
-              GET IN TOUCH
-            </h4>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-text-secondary">Email</p>
-                  <a 
-                    href="mailto:hello@photographer.com" 
-                    className="text-white hover:text-text-primary transition-colors"
-                  >
-                    hello@photographer.com
-                  </a>
+            <div className="grid grid-rows-2 gap-4">
+              <h4 className="text-lg font-semibold text-white tracking-wide">
+                GET IN TOUCH
+              </h4>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Mail className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-text-secondary">Email</p>
+                    <a 
+                      href="mailto:hello@photographer.com" 
+                      className="text-white hover:text-text-primary transition-colors"
+                    >
+                      hello@photographer.com
+                    </a>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-text-secondary">Phone</p>
-                  <a 
-                    href="tel:+1234567890" 
-                    className="text-white hover:text-text-primary transition-colors"
-                  >
-                    +1 (234) 567-8900
-                  </a>
+                
+                <div className="flex items-start space-x-3">
+                  <Phone className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-text-secondary">Phone</p>
+                    <a 
+                      href="tel:+1234567890" 
+                      className="text-white hover:text-text-primary transition-colors"
+                    >
+                      +1 (234) 567-8900
+                    </a>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-text-secondary">Location</p>
-                  <p className="text-white">
-                    San Francisco, CA
-                  </p>
+                
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-text-secondary">Location</p>
+                    <p className="text-white">
+                      San Francisco, CA
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
