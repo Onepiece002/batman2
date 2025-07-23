@@ -14,32 +14,30 @@ export default function FeaturedWork() {
 
   const scroll = (direction: 'left' | 'right') => {
     if (direction === 'left') {
-      setCurrentIndex(Math.max(0, currentIndex - 1));
+      const newIndex = Math.max(0, currentIndex - 1);
+      setCurrentIndex(newIndex);
+      setScrollPosition(newIndex * itemWidth);
     } else {
-      setCurrentIndex(Math.min(featuredImages.length - 4, currentIndex + 1));
+      const newIndex = Math.min(featuredImages.length - 4, currentIndex + 1);
+      setCurrentIndex(newIndex);
+      setScrollPosition(newIndex * itemWidth);
     }
   };
 
-  // Handle mouse wheel scrolling with throttling
+  // Handle mouse wheel scrolling with smooth continuous movement
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const maxScroll = (featuredImages.length - 4) * itemWidth;
   
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
     
-    if (isScrolling) return; // Prevent rapid scrolling
+    // Calculate new scroll position based on wheel delta
+    const scrollSpeed = 1.5; // Adjust scroll sensitivity for smoother movement
+    const newPosition = Math.max(0, Math.min(maxScroll, scrollPosition + (e.deltaY * scrollSpeed)));
     
-    setIsScrolling(true);
-    
-    if (Math.abs(e.deltaY) > 50) { // Only scroll on significant wheel movement
-      if (e.deltaY > 0) {
-        scroll('right');
-      } else {
-        scroll('left');
-      }
-    }
-    
-    // Reset scrolling flag after delay
-    setTimeout(() => setIsScrolling(false), 300);
+    setScrollPosition(newPosition);
+    setCurrentIndex(Math.round(newPosition / itemWidth));
   };
 
   return (
@@ -73,18 +71,23 @@ export default function FeaturedWork() {
           {/* Scrollable Container */}
           <div 
             ref={containerRef}
-            className="overflow-hidden px-12"
+            className="overflow-hidden px-12 relative"
             onWheel={handleWheel}
+            style={{ cursor: 'grab' }}
           >
+            {/* Scroll indicator */}
+            <div className="absolute top-4 right-4 text-text-secondary text-sm opacity-50 pointer-events-none">
+              Scroll to explore →
+            </div>
             <motion.div
               className="flex gap-6"
               animate={{
-                x: -currentIndex * itemWidth
+                x: -scrollPosition
               }}
               transition={{
                 type: "spring",
-                damping: 20,
-                stiffness: 100
+                damping: 25,
+                stiffness: 120
               }}
             >
               {featuredImages.map((image, index) => (
@@ -121,7 +124,10 @@ export default function FeaturedWork() {
             {Array.from({ length: Math.max(1, featuredImages.length - 3) }).map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  setScrollPosition(index * itemWidth);
+                }}
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-white"
