@@ -25,7 +25,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
       className="bg-dark-card rounded-lg overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 h-full flex flex-col"
     >
       {post.featuredImage && (
-        <div className="aspect-[1/1.5] overflow-hidden">
+        <div className="aspect-square overflow-hidden">
           <img
             src={post.featuredImage}
             alt={post.title}
