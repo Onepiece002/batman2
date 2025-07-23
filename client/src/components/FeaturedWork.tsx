@@ -10,7 +10,7 @@ export default function FeaturedWork() {
 
   // Get first 6 images for featured work
   const featuredImages = portfolioImages.slice(0, 6);
-  const itemWidth = 280; // Width of each item including gap
+  const itemWidth = 380; // Width of each item including gap
 
   const scroll = (direction: 'left' | 'right') => {
     if (direction === 'left') {
@@ -18,7 +18,7 @@ export default function FeaturedWork() {
       setCurrentIndex(newIndex);
       setScrollPosition(newIndex * itemWidth);
     } else {
-      const newIndex = Math.min(featuredImages.length - 4, currentIndex + 1);
+      const newIndex = Math.min(featuredImages.length - 3, currentIndex + 1);
       setCurrentIndex(newIndex);
       setScrollPosition(newIndex * itemWidth);
     }
@@ -27,7 +27,7 @@ export default function FeaturedWork() {
   // Handle mouse wheel scrolling with smooth continuous movement
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-  const maxScroll = (featuredImages.length - 4) * itemWidth;
+  const maxScroll = (featuredImages.length - 3) * itemWidth;
   
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ export default function FeaturedWork() {
 
           <button
             onClick={() => scroll('right')}
-            disabled={currentIndex >= featuredImages.length - 4}
+            disabled={currentIndex >= featuredImages.length - 3}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed text-white p-3 rounded-full transition-all"
           >
             <ChevronRight className="w-6 h-6" />
@@ -93,11 +93,11 @@ export default function FeaturedWork() {
               {featuredImages.map((image, index) => (
                 <motion.div
                   key={image.id}
-                  className="min-w-[264px] group cursor-pointer"
+                  className="min-w-[364px] group cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="relative overflow-hidden rounded-lg bg-dark-card aspect-[4/5]">
+                  <div className="relative overflow-hidden rounded-lg bg-dark-card aspect-[3/4]">
                     <img
                       src={image.imageUrl}
                       alt={image.title || "Featured work"}
@@ -121,7 +121,7 @@ export default function FeaturedWork() {
 
           {/* Progress Indicators */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: Math.max(1, featuredImages.length - 3) }).map((_, index) => (
+            {Array.from({ length: Math.max(1, featuredImages.length - 2) }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
