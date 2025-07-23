@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -46,6 +47,7 @@ export default function Navigation() {
                   {item.label}
                 </Link>
               ))}
+              <ThemeToggle />
             </div>
           </div>
 
@@ -82,6 +84,9 @@ export default function Navigation() {
               {item.label}
             </Link>
           ))}
+          <div className="pt-4">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>

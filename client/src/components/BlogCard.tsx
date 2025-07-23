@@ -25,12 +25,14 @@ export default function BlogCard({ post, index }: BlogCardProps) {
       className="bg-dark-card rounded-lg overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 h-full flex flex-col"
     >
       {post.featuredImage && (
-        <img
-          src={post.featuredImage}
-          alt={post.title}
-          className="w-full h-56 object-cover"
-          loading="lazy"
-        />
+        <div className="aspect-[1/1.5] overflow-hidden">
+          <img
+            src={post.featuredImage}
+            alt={post.title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
       )}
       <div className="p-6 flex-1 flex flex-col">
         <div className="text-text-secondary text-sm mb-3">

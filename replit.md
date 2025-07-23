@@ -13,6 +13,10 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Netlify Configuration**: Added netlify.toml for deployment
 ✓ **Static Contact Form**: Converted to mailto-based contact form
 ✓ **Build Optimization**: Optimized for static deployment
+✓ **Dark/Light Theme Toggle**: Added theme switcher with CSS variable support
+✓ **Blog Card Aspect Ratio**: Updated to 1:1.5 ratio as requested
+✓ **Parallax Sections**: Removed "Nature's Canvas", repositioned "Beyond Boundaries"
+✓ **Fully Static**: Eliminated all API calls, database queries, and authentication
 
 ## User Preferences
 

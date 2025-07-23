@@ -36,6 +36,19 @@
   --border-subtle: hsl(0, 0%, 15%);
 }
 
+.light {
+  /* Light theme overrides */
+  --dark-primary: hsl(0, 0%, 98%);
+  --dark-secondary: hsl(0, 0%, 95%);
+  --dark-card: hsl(0, 0%, 100%);
+  --dark-accent: hsl(0, 0%, 92%);
+  --text-primary: hsl(0, 0%, 3%);
+  --text-secondary: hsl(0, 0%, 40%);
+  --text-muted: hsl(0, 0%, 55%);
+  --border-dark: hsl(0, 0%, 80%);
+  --border-subtle: hsl(0, 0%, 85%);
+}
+
 .dark {
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
