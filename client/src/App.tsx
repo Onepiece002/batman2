@@ -34,7 +34,7 @@ function Router() {
           <Route path="/blog/:slug" component={BlogPost} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route component={NotFound} />
+          <Route path="*" component={NotFound} />
         </>
       ) : (
         <>
@@ -46,7 +46,7 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/profile" component={Profile} />
           <Route path="/admin" component={Admin} />
-          <Route component={NotFound} />
+          <Route path="*" component={NotFound} />
         </>
       )}
     </Switch>
