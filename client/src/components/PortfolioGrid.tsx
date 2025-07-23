@@ -12,8 +12,11 @@ export default function PortfolioGrid() {
 
   const filters = [
     { key: "all", label: "ALL" },
-    { key: "portraits", label: "PORTRAITS" },
-    { key: "lifestyle", label: "LIFESTYLE" },
+    { key: "portrait", label: "PORTRAITS" },
+    { key: "urban", label: "URBAN" },
+    { key: "landscape", label: "LANDSCAPE" },
+    { key: "commercial", label: "COMMERCIAL" },
+    { key: "wedding", label: "WEDDING" },
   ];
 
   const filteredImages = images?.filter(
@@ -40,15 +43,15 @@ export default function PortfolioGrid() {
     <div>
       {/* Filter Navigation */}
       <div className="flex justify-center mb-12">
-        <div className="flex space-x-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {filters.map((filter) => (
             <button
               key={filter.key}
               onClick={() => setActiveFilter(filter.key)}
-              className={`pb-2 font-medium transition-colors ${
+              className={`pb-2 px-1 font-medium text-sm md:text-base tracking-wider transition-all duration-300 ${
                 activeFilter === filter.key
-                  ? "border-b-2 border-white text-white"
-                  : "text-text-secondary hover:text-white"
+                  ? "border-b-2 border-text-primary text-text-primary"
+                  : "text-text-secondary hover:text-text-primary border-b-2 border-transparent"
               }`}
             >
               {filter.label}
@@ -59,30 +62,34 @@ export default function PortfolioGrid() {
 
       {/* Portfolio Grid - Masonry Layout */}
       <div className="grid-masonry">
-        {filteredImages?.map((image) => (
+        {filteredImages?.map((image, index) => (
           <motion.div
             key={image.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
             className="grid-item group cursor-pointer"
           >
-            <div className="overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-lg bg-dark-card">
               <img
                 src={image.imageUrl}
                 alt={image.title || "Portfolio image"}
-                className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop';
+                }}
               />
-            </div>
-            {image.title && (
-              <div className="mt-3">
-                <h3 className="text-white font-medium">{image.title}</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                {image.title && (
+                  <h3 className="text-text-primary font-semibold text-lg mb-1">{image.title}</h3>
+                )}
                 {image.description && (
-                  <p className="text-text-secondary text-sm mt-1">{image.description}</p>
+                  <p className="text-text-secondary text-sm line-clamp-2">{image.description}</p>
                 )}
               </div>
-            )}
+            </div>
           </motion.div>
         ))}
       </div>
