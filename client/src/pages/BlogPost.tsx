@@ -72,7 +72,7 @@ export default function BlogPostPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="prose prose-lg prose-invert max-w-none"
+            className="prose prose-lg prose-invert max-w-none prose-headings:text-white prose-headings:font-bold prose-h1:text-4xl prose-h1:mb-6 prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-8 prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-4 prose-a:text-text-primary prose-strong:text-white prose-ul:text-text-secondary prose-ol:text-text-secondary"
           >
             {post.content.split('\n').map((paragraph, index) => {
               if (paragraph.startsWith('## ')) {

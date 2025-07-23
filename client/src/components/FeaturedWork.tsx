@@ -20,26 +20,27 @@ export default function FeaturedWork() {
     }
   };
 
-  // Handle mouse wheel scrolling
+  // Handle mouse wheel scrolling with throttling
+  const [isScrolling, setIsScrolling] = useState(false);
+  
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
-    if (e.deltaY > 0) {
-      scroll('right');
-    } else {
-      scroll('left');
+    
+    if (isScrolling) return; // Prevent rapid scrolling
+    
+    setIsScrolling(true);
+    
+    if (Math.abs(e.deltaY) > 50) { // Only scroll on significant wheel movement
+      if (e.deltaY > 0) {
+        scroll('right');
+      } else {
+        scroll('left');
+      }
     }
+    
+    // Reset scrolling flag after delay
+    setTimeout(() => setIsScrolling(false), 300);
   };
-
-  // Auto scroll effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => 
-        prev >= featuredImages.length - 4 ? 0 : prev + 1
-      );
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [featuredImages.length]);
 
   return (
     <section className="py-20 px-4 bg-dark-primary relative">
@@ -134,8 +135,8 @@ export default function FeaturedWork() {
         {/* View More Button */}
         <div className="text-center mt-12">
           <Link href="/portfolio">
-            <button className="btn-secondary">
-              VIEW MORE
+            <button className="btn-secondary px-8 py-3 text-lg">
+              VIEW MORE WORK
             </button>
           </Link>
         </div>

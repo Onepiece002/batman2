@@ -114,6 +114,51 @@ export default function Landing() {
           </p>
         </motion.div>
       </ParallaxSection>
+
+      {/* Third Parallax Section */}
+      <ParallaxSection
+        backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=800"
+        height="h-[70vh]"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center z-10"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">BEYOND BOUNDARIES</h2>
+          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
+            Exploring new horizons in visual storytelling and pushing creative limits
+          </p>
+        </motion.div>
+      </ParallaxSection>
+
+      {/* Fourth Parallax Section */}
+      <ParallaxSection
+        backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=600"
+        height="h-80"
+      >
+        <motion.div
+          initial={{ opacity: 0, rotate: -2 }}
+          whileInView={{ opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center z-10"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">NATURE'S CANVAS</h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center"
+          >
+            <Link href="/portfolio">
+              <button className="btn-primary text-lg px-8 py-4">
+                EXPLORE GALLERY
+              </button>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </ParallaxSection>
       
       <Footer />
     </div>
