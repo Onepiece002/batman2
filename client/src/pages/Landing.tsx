@@ -66,18 +66,12 @@ export default function Landing() {
           <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto">
             Creating compelling narratives through the lens of creativity and innovation
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center items-center">
             <Link href="/portfolio">
               <button className="px-8 py-3 bg-text-primary text-dark-primary font-semibold tracking-wider hover:bg-text-secondary transition-colors duration-300">
                 VIEW PORTFOLIO
               </button>
             </Link>
-            <a 
-              href="/api/login"
-              className="px-8 py-3 border border-text-primary text-text-primary font-semibold tracking-wider hover:bg-text-primary hover:text-dark-primary transition-all duration-300"
-            >
-              LOGIN
-            </a>
           </div>
         </motion.div>
       </ParallaxSection>
