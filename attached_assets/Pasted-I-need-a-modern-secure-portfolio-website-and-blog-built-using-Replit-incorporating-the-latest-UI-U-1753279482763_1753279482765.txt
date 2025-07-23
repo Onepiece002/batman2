@@ -1,0 +1,87 @@
+I need a modern, secure portfolio website and blog built using Replit, incorporating the latest UI/UX trends—especially smooth parallax animations and minimalistic button designs from the past two years. The site should be easily updatable, visually impressive, and follow best practices in security and code maintainability. Here’s a detailed project prompt for your development team:
+
+Functional Requirements
+Key Features
+Separate Pages:
+
+Home, Portfolio, Blog, About Me, Contact Me, Sign In, Sign Up, User Profiles, Admin Dashboard, Individual Blog Article Pages.
+
+No merged or single-page sections: each menu item is a distinct, separately routed page.
+
+Clicking “Portfolio”, “Contact Me”, etc. should load a new route/page—not just scroll down on the home page.
+
+Homepage
+
+Showcase a gallery of new/updatable pictures (use placeholder/fake images for now, but must be updatable via the Admin panel).
+
+Feature a preview of recently published blog articles.
+
+Include at least two parallax animations and one additional animated element/section (e.g., scroll-triggered cards, slide-in images).
+
+Smooth animations and seamless transitions.
+
+Navigation buttons visually distinct and inviting, gently guiding users to other pages.
+
+Small preview grid of 3–4 portfolio shots with a “View More” button that routes fully to the Portfolio page.
+
+Portfolio Page
+
+Grid gallery closely resembling Peter McKinnon’s portraits page, updatable by admin.
+
+Modern, minimal, responsive layout, consistent font and theme sitewide.
+
+Blog
+
+Paginated list of articles with previews—each linking to a dedicated article page.
+
+Clean, readable design.
+
+About Me, Contact Me
+
+Separate, simple, and engaging pages. Contact page with email/contact form.
+
+Authentication
+
+Secure user sign up/in with Firebase Authentication.
+
+User profile management.
+
+Only admin access to site management tools.
+
+Admin Dashboard
+
+Upload/change images in the gallery and homepage.
+
+Publish/edit/delete blog posts.
+
+Manage portfolio images.
+
+All content updates reflected instantly on site.
+
+Design & Animations
+Use smooth, trendy parallax effects (e.g., image depth on scroll, layered sections) and one other current animation type (e.g., content fade-in, scroll-based sliders).
+
+Minimalistic, consistent button design.
+
+Font and color palette harmonized across the site.
+
+Technical & Security Specifications
+Frontend: Modern React framework (e.g., Next.js or similar) with CSS-in-JS for modular styles; integrate animation libraries like Framer Motion or GSAP for parallax.
+
+Backend: Use serverless functions (Node.js) or a simple Express backend for handling content updates.
+
+Database/Authentication: Firebase for user accounts and admin gating.
+
+Content Management: Suggest integrating a lightweight headless CMS (like Sanity.io, Strapi, or Contentful) for future-proof and easy content updates.
+
+Deployment: Host on Netlify, optimize for fast global load.
+
+Security:
+
+Implement strong input validation (prevent XSS, CSRF, SSRF, SQLi, etc.).
+
+Use HTTPS everywhere, secure Firebase rules (read/write restrictions).
+
+Prevent unauthorized access to admin features.
+
+Minimize all security vulnerabilities; follow OWASP Top 10 guidelines.
