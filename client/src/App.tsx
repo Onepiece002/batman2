@@ -12,21 +12,24 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
-import Profile from "@/pages/Profile";
+import Profile from "@/pages/Profile";  
 import Admin from "@/pages/Admin";
+import Debug from "@/pages/Debug";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-dark-primary flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <Switch>
-      {isLoading ? (
-        <Route path="*">
-          <div className="min-h-screen bg-dark-primary flex items-center justify-center">
-            <div className="text-white">Loading...</div>
-          </div>
-        </Route>
-      ) : !isAuthenticated ? (
+      {!isAuthenticated ? (
         <>
           <Route path="/" component={Landing} />
           <Route path="/portfolio" component={Portfolio} />
@@ -34,6 +37,7 @@ function Router() {
           <Route path="/blog/:slug" component={BlogPost} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/debug" component={Debug} />
           <Route path="*" component={NotFound} />
         </>
       ) : (
@@ -46,6 +50,7 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/profile" component={Profile} />
           <Route path="/admin" component={Admin} />
+          <Route path="/debug" component={Debug} />
           <Route path="*" component={NotFound} />
         </>
       )}
