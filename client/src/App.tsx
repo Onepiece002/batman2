@@ -29,31 +29,20 @@ function Router() {
 
   return (
     <Switch>
-      {!isAuthenticated ? (
+      <Route path="/" component={!isAuthenticated ? Landing : Home} />
+      <Route path="/portfolio" component={Portfolio} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/debug" component={Debug} />
+      {isAuthenticated && (
         <>
-          <Route path="/" component={Landing} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/blog/:slug" component={BlogPost} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/debug" component={Debug} />
-          <Route path="*" component={NotFound} />
-        </>
-      ) : (
-        <>
-          <Route path="/" component={Home} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/blog/:slug" component={BlogPost} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
           <Route path="/profile" component={Profile} />
           <Route path="/admin" component={Admin} />
-          <Route path="/debug" component={Debug} />
-          <Route path="*" component={NotFound} />
         </>
       )}
+      <Route path="*" component={NotFound} />
     </Switch>
   );
 }
