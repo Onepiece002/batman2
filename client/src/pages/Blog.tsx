@@ -20,7 +20,7 @@ export default function Blog() {
       <Navigation />
       
       <div className="pt-24 pb-20 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function Blog() {
           </motion.div>
 
           {currentPosts.length > 0 ? (
-            <div className="space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {currentPosts.map((post, index) => (
                 <BlogCard key={post.id} post={post} index={index} />
               ))}

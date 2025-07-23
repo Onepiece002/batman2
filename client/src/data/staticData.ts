@@ -486,6 +486,157 @@ export const portfolioImages: PortfolioImage[] = [
     orderIndex: 15,
     createdAt: "2024-01-24T16:20:00Z",
     updatedAt: "2024-01-24T16:20:00Z"
+  },
+  // Additional 15 images to double the portfolio
+  {
+    id: 16,
+    title: "Artistic Portrait",
+    description: "Creative studio portrait with dramatic lighting effects.",
+    imageUrl: "https://images.unsplash.com/photo-1494790108755-2616c5e02e01?w=600&h=800&fit=crop",
+    category: "portraits",
+    orderIndex: 16,
+    createdAt: "2024-01-25T10:00:00Z",
+    updatedAt: "2024-01-25T10:00:00Z"
+  },
+  {
+    id: 17,
+    title: "Business Executive",
+    description: "Professional corporate headshot in modern office setting.",
+    imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop",
+    category: "portraits",
+    orderIndex: 17,
+    createdAt: "2024-01-25T11:00:00Z",
+    updatedAt: "2024-01-25T11:00:00Z"
+  },
+  {
+    id: 18,
+    title: "Creative Professional",
+    description: "Environmental portrait showcasing personality in workspace.",
+    imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop",
+    category: "portraits",
+    orderIndex: 18,
+    createdAt: "2024-01-25T12:00:00Z",
+    updatedAt: "2024-01-25T12:00:00Z"
+  },
+  {
+    id: 19,
+    title: "Street Art Mural",
+    description: "Vibrant urban street art documentation and cultural expression.",
+    imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+    category: "street",
+    orderIndex: 19,
+    createdAt: "2024-01-25T13:00:00Z",
+    updatedAt: "2024-01-25T13:00:00Z"
+  },
+  {
+    id: 20,
+    title: "City Motion",
+    description: "Long exposure capturing the rhythm and energy of urban life.",
+    imageUrl: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=600&h=400&fit=crop",
+    category: "street",
+    orderIndex: 20,
+    createdAt: "2024-01-25T14:00:00Z",
+    updatedAt: "2024-01-25T14:00:00Z"
+  },
+  {
+    id: 21,
+    title: "Desert Minimalism",
+    description: "Stark beauty of desert landscape with minimalist composition.",
+    imageUrl: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop",
+    category: "landscapes",
+    orderIndex: 21,
+    createdAt: "2024-01-25T15:00:00Z",
+    updatedAt: "2024-01-25T15:00:00Z"
+  },
+  {
+    id: 22,
+    title: "Ocean Waves",
+    description: "Dramatic coastal landscape with crashing waves and moody sky.",
+    imageUrl: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&h=400&fit=crop",
+    category: "landscapes",
+    orderIndex: 22,
+    createdAt: "2024-01-25T16:00:00Z",
+    updatedAt: "2024-01-25T16:00:00Z"
+  },
+  {
+    id: 23,
+    title: "Forest Pathway",
+    description: "Mystical forest scene with dappled light and natural textures.",
+    imageUrl: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&h=800&fit=crop",
+    category: "landscapes",
+    orderIndex: 23,
+    createdAt: "2024-01-25T17:00:00Z",
+    updatedAt: "2024-01-25T17:00:00Z"
+  },
+  {
+    id: 24,
+    title: "Wedding Ceremony",
+    description: "Intimate outdoor wedding ceremony moment captured candidly.",
+    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop",
+    category: "weddings",
+    orderIndex: 24,
+    createdAt: "2024-01-25T18:00:00Z",
+    updatedAt: "2024-01-25T18:00:00Z"
+  },
+  {
+    id: 25,
+    title: "Reception Celebration",
+    description: "Joyful wedding reception moments filled with laughter and dance.",
+    imageUrl: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&h=400&fit=crop",
+    category: "weddings",
+    orderIndex: 25,
+    createdAt: "2024-01-25T19:00:00Z",
+    updatedAt: "2024-01-25T19:00:00Z"
+  },
+  {
+    id: 26,
+    title: "Live Concert",
+    description: "Dynamic stage photography capturing the energy of live performance.",
+    imageUrl: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&h=400&fit=crop",
+    category: "events",
+    orderIndex: 26,
+    createdAt: "2024-01-25T20:00:00Z",
+    updatedAt: "2024-01-25T20:00:00Z"
+  },
+  {
+    id: 27,
+    title: "Conference Speaker",
+    description: "Professional event photography of keynote presentation.",
+    imageUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop",
+    category: "events",
+    orderIndex: 27,
+    createdAt: "2024-01-25T21:00:00Z",
+    updatedAt: "2024-01-25T21:00:00Z"
+  },
+  {
+    id: 28,
+    title: "Modern Skyscraper",
+    description: "Contemporary architecture study emphasizing geometric patterns.",
+    imageUrl: "https://images.unsplash.com/photo-1516736923207-e7c0c336b16a?w=600&h=800&fit=crop",
+    category: "architecture",
+    orderIndex: 28,
+    createdAt: "2024-01-25T22:00:00Z",
+    updatedAt: "2024-01-25T22:00:00Z"
+  },
+  {
+    id: 29,
+    title: "Historic Building",
+    description: "Classical architecture captured with attention to detail and heritage.",
+    imageUrl: "https://images.unsplash.com/photo-1520637836862-4d197d17c9a4?w=600&h=800&fit=crop",
+    category: "architecture",
+    orderIndex: 29,
+    createdAt: "2024-01-25T23:00:00Z",
+    updatedAt: "2024-01-25T23:00:00Z"
+  },
+  {
+    id: 30,
+    title: "Wildlife Portrait",
+    description: "Intimate wildlife photography showcasing natural behavior.",
+    imageUrl: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=600&h=400&fit=crop",
+    category: "nature",
+    orderIndex: 30,
+    createdAt: "2024-01-26T00:00:00Z",
+    updatedAt: "2024-01-26T00:00:00Z"
   }
 ];
 

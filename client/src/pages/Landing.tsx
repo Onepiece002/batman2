@@ -5,6 +5,7 @@ import ParallaxSection from "@/components/ParallaxSection";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
+import FeaturedWork from "@/components/FeaturedWork";
 import { Link } from "wouter";
 import { blogPosts, portfolioImages } from "@/data/staticData";
 
@@ -70,41 +71,7 @@ export default function Landing() {
       </ParallaxSection>
 
       {/* Featured Work Preview */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl font-bold mb-4">FEATURED WORK</h2>
-          <p className="text-text-secondary text-lg">
-            A selection of recent projects and creative endeavors
-          </p>
-        </div>
-
-        {featuredImages.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-            {featuredImages.map((image) => (
-              <div key={image.id} className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <img
-                    src={image.imageUrl}
-                    alt={image.title || "Featured work"}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center fade-in">
-            <p className="text-text-secondary">No featured work available.</p>
-          </div>
-        )}
-
-        <div className="text-center mt-12">
-          <Link href="/portfolio">
-            <button className="btn-secondary">VIEW MORE</button>
-          </Link>
-        </div>
-      </section>
+      <FeaturedWork />
 
       {/* Latest Blog Posts */}
       <section className="py-20 px-4 bg-dark-secondary">
