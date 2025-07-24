@@ -177,6 +177,16 @@ export default function Landing() {
                   ))}
                 </div>
               </div>
+
+              {/* View More Button */}
+              <div className="text-center mt-12">
+                <Link href="/blog">
+                  <button className="group relative px-8 py-4 bg-gradient-to-r from-text-primary to-text-secondary text-dark-primary font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-transparent hover:border-text-primary hover:bg-transparent hover:text-text-primary transform transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <span className="relative z-10">VIEW MORE INSIGHTS</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-text-secondary to-text-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  </button>
+                </Link>
+              </div>
             </div>
           ) : (
             <div className="text-center">
@@ -206,17 +216,16 @@ export default function Landing() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <Link href="/about">
-              <button className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-white/30 hover:border-white hover:bg-white hover:text-dark-primary transform transition-all duration-300 shadow-lg hover:shadow-2xl">
-                <span className="relative z-10">ABOUT ME</span>
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <button className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-white/30 hover:border-white/80 hover:bg-white/20 transform transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">ABOUT ME</span>
               </button>
             </Link>
           </motion.div>
         </motion.div>
       </ParallaxSection>
       
-      {/* Spacer section to separate Capturing Moments from Footer */}
-      <div className="bg-dark-primary py-20"></div>
+      {/* Subtle transition section */}
+      <div className="bg-gradient-to-b from-transparent via-dark-primary/50 to-dark-primary py-16"></div>
       
       <Footer />
     </div>
