@@ -41,7 +41,6 @@ export default function Landing() {
   return (
     <div className="bg-dark-primary text-text-primary">
       <Navigation />
-
       {/* Hero Section with Parallax - Larger with Dark Forest Theme */}
       <ParallaxSection
         backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
@@ -53,9 +52,7 @@ export default function Landing() {
           transition={{ duration: 1.2, delay: 0.5 }}
           className="text-center z-10 px-4"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tight">
-            VISUAL STORYTELLER
-          </h1>
+          <h1 className="md:text-8xl lg:text-9xl mb-8 tracking-tight text-[58px] ml-[1000px] mr-[1000px] font-normal">Rajesh Nunna</h1>
           <p className="text-xl md:text-3xl lg:text-4xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
             Creating compelling narratives through the lens of creativity and innovation
           </p>
@@ -69,10 +66,8 @@ export default function Landing() {
           </div>
         </motion.div>
       </ParallaxSection>
-
       {/* Featured Work Preview */}
       <FeaturedWork />
-
       {/* Beyond Boundaries Parallax Section */}
       <ParallaxSection
         backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
@@ -90,7 +85,6 @@ export default function Landing() {
           </p>
         </motion.div>
       </ParallaxSection>
-
       {/* Latest Blog Posts */}
       <section className="py-20 px-4 bg-dark-secondary">
         <div className="max-w-7xl mx-auto">
@@ -114,7 +108,6 @@ export default function Landing() {
           )}
         </div>
       </section>
-
       {/* Capturing Moments Parallax Section - Larger */}
       <ParallaxSection
         backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
@@ -132,9 +125,6 @@ export default function Landing() {
           </p>
         </motion.div>
       </ParallaxSection>
-
-
-      
       <Footer />
     </div>
   );
