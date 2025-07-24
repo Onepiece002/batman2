@@ -31,6 +31,9 @@ export default function BlogCard({ post, index }: BlogCardProps) {
             alt={post.title}
             className="w-full h-full object-cover"
             loading="lazy"
+            onError={(e) => {
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop';
+            }}
           />
         </div>
       )}
