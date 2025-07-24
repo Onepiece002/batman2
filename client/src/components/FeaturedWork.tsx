@@ -7,22 +7,49 @@ import { portfolioImages } from "@/data/staticData";
 export default function FeaturedWork() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
 
   // Get first 8 images for featured work
   const featuredImages = portfolioImages.slice(0, 8);
-  const itemWidth = 280; // Width of each item including gap
+  const itemWidth = 340; // Increased width for larger items
   const maxScroll = Math.max(0, (featuredImages.length - 3) * itemWidth);
 
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
+  // Handle scroll-based sliding effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate progress as the section enters and exits the viewport
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      
+      // Start sliding when section is 80% visible from bottom
+      const startPoint = windowHeight * 0.8;
+      // Continue until section is 20% visible from top
+      const endPoint = -sectionHeight * 0.2;
+      
+      if (sectionTop <= startPoint && sectionTop >= endPoint) {
+        // Calculate progress (0 to 1)
+        const progress = (startPoint - sectionTop) / (startPoint - endPoint);
+        const clampedProgress = Math.max(0, Math.min(1, progress));
+        
+        // Apply easing for smoother animation
+        const easedProgress = clampedProgress * clampedProgress * (3 - 2 * clampedProgress);
+        
+        // Set scroll position based on progress
+        setScrollPosition(easedProgress * maxScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
     
-    // Horizontal scrolling: positive deltaY = scroll right, negative = scroll left
-    const scrollSpeed = 2;
-    const newPosition = Math.max(0, Math.min(maxScroll, scrollPosition + (e.deltaY * scrollSpeed)));
-    
-    setScrollPosition(newPosition);
-  };
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [maxScroll]);
 
   const scrollTo = (direction: 'left' | 'right') => {
     const scrollAmount = itemWidth * 2; // Scroll 2 items at a time
@@ -35,6 +62,7 @@ export default function FeaturedWork() {
 
   return (
     <motion.section 
+      ref={sectionRef}
       className="py-20 px-4 bg-dark-primary dark:bg-dark-primary"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -76,8 +104,7 @@ export default function FeaturedWork() {
           {/* Scrollable Container */}
           <div 
             ref={containerRef}
-            className="overflow-hidden px-12 relative cursor-grab active:cursor-grabbing"
-            onWheel={handleWheel}
+            className="overflow-hidden px-12 relative"
           >
             <div 
               className="flex gap-6 transition-transform duration-300 ease-out"
@@ -89,7 +116,7 @@ export default function FeaturedWork() {
               {featuredImages.map((image, index) => (
                 <motion.div
                   key={image.id}
-                  className="flex-shrink-0 w-64 group"
+                  className="flex-shrink-0 w-80 group"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.01 }}
