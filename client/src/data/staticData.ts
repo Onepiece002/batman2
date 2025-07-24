@@ -291,7 +291,7 @@ export const portfolioImages: PortfolioImage[] = [
     id: 1,
     title: "Golden Hour Portrait",
     description: "A stunning portrait captured during the golden hour, showcasing natural lighting techniques.",
-    imageUrl: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&h=600&fit=crop",
+    imageUrl: "/images/001.jpg",
     category: "portraits",
     orderIndex: 1,
     createdAt: "2024-01-10T09:00:00Z",
