@@ -37,6 +37,8 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Blog Layout Update**: Converted Latest Insights to sliding carousel with 6 smaller articles (shows 4, slides to view more) with navigation buttons and mouse wheel support
 ✓ **Theme Support**: Updated blog cards to properly adapt backgrounds and text colors for both light and dark modes
 ✓ **Clean Hero Section**: Updated hero to dark night sky image, removed text/button content, and prevented extension into header area
+✓ **Header Separation**: Moved hero section below header with proper spacing to prevent overlap
+✓ **Logo Hover Effect**: Added strikethrough animation on logo hover with smooth transition
 
 ## User Preferences
 

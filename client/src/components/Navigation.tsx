@@ -26,8 +26,11 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-cursive tracking-wider text-text-primary dark:text-white hover:text-text-secondary dark:hover:text-gray-300 transition-colors" style={{ fontFamily: 'Dancing Script, cursive' }}>
-              Rajesh Nunna
+            <Link href="/" className="relative text-2xl font-cursive tracking-wider text-text-primary dark:text-white hover:text-text-secondary dark:hover:text-gray-300 transition-colors group" style={{ fontFamily: 'Dancing Script, cursive' }}>
+              <span className="relative">
+                Rajesh Nunna
+                <span className="absolute inset-0 border-t border-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left top-1/2"></span>
+              </span>
             </Link>
           </div>
 
