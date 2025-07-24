@@ -53,7 +53,7 @@ export default function Landing() {
           transition={{ duration: 1.2, delay: 0.5 }}
           className="text-center z-10 px-4"
         >
-          <h1 className="md:text-8xl lg:text-9xl mb-8 tracking-tight text-[58px] ml-[1000px] mr-[1000px] font-normal">Rajesh Nunna</h1>
+          <h1 className="md:text-8xl lg:text-9xl mb-8 tracking-tight text-[58px] ml-[1000px] mr-[1000px] font-normal" style={{ color: '#ffffff' }}>Rajesh Nunna</h1>
           <p className="text-xl md:text-3xl lg:text-4xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
             Creating compelling narratives through the lens of creativity and innovation
           </p>
