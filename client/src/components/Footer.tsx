@@ -72,10 +72,23 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 rounded-full bg-black/40 border border-gray-700 transition-all duration-300 hover:border-white hover:scale-110 hover:bg-black/60 ${social.color}`}
+                    className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${social.color}`}
+                    style={{ 
+                      backgroundColor: 'rgba(0, 0, 0, 0.4)', 
+                      borderColor: '#374151',
+                      border: '1px solid'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#ffffff';
+                      e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#374151';
+                      e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+                    }}
                     aria-label={social.name}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-4 w-4 text-white" />
                   </a>
                 );
               })}
@@ -107,10 +120,13 @@ export default function Footer() {
             </h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-white flex-shrink-0" />
+                <Mail className="h-4 w-4 flex-shrink-0" style={{ color: '#ffffff' }} />
                 <a 
                   href="mailto:hello@photographer.com" 
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                  className="transition-colors text-sm"
+                  style={{ color: '#d1d5db' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#d1d5db'}
                 >
                   hello@photographer.com
                 </a>
