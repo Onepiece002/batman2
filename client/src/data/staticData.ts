@@ -291,7 +291,7 @@ export const portfolioImages: PortfolioImage[] = [
     id: 1,
     title: "Golden Hour Portrait",
     description: "A stunning portrait captured during the golden hour, showcasing natural lighting techniques.",
-    imageUrl: "/images/001.jpg",
+    imageUrl: "/images/007.jpg",
     category: "portraits",
     orderIndex: 1,
     createdAt: "2024-01-10T09:00:00Z",
