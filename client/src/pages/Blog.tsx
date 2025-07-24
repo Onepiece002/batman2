@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
-import { blogPosts, type BlogPost } from "@/data/staticData";
+import { blogPosts } from "@/data/blogPosts";
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);

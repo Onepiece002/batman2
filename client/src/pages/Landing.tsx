@@ -7,7 +7,8 @@ import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import FeaturedWork from "@/components/FeaturedWork";
 import { Link } from "wouter";
-import { blogPosts, portfolioImages } from "@/data/staticData";
+import { portfolioImages } from "@/data/staticData";
+import { blogPosts } from "@/data/blogPosts";
 
 export default function Landing() {
   // Featured images - first 6 from portfolio
@@ -86,7 +87,7 @@ export default function Landing() {
         </motion.div>
       </ParallaxSection>
       {/* Latest Blog Posts */}
-      <section className="py-20 px-4 bg-dark-secondary">
+      <section className="py-20 px-4 bg-dark-primary dark:bg-dark-primary">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 fade-in">
             <h2 className="text-4xl font-bold mb-4">LATEST INSIGHTS</h2>

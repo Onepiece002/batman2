@@ -2,7 +2,7 @@ import { useParams } from "wouter";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { blogPosts, type BlogPost } from "@/data/staticData";
+import { blogPosts } from "@/data/blogPosts";
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -45,47 +45,45 @@ export default function BlogPostPage() {
             className="mb-8"
           >
             <div className="text-text-secondary text-sm mb-4">
-              {formatDate(post.createdAt)} • 5 min read
+              {formatDate(post.publishedAt)} • By {post.author} • 5 min read
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
             {post.excerpt && (
               <p className="text-xl text-text-secondary mb-8">{post.excerpt}</p>
             )}
+            
+            {post.featuredImage && (
+              <div className="mb-8 rounded-lg overflow-hidden">
+                <img 
+                  src={post.featuredImage} 
+                  alt={post.title}
+                  className="w-full h-64 md:h-96 object-cover"
+                />
+              </div>
+            )}
           </motion.div>
-
-          {post.featuredImage && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-12"
-            >
-              <img
-                src={post.featuredImage}
-                alt={post.title}
-                className="w-full h-64 md:h-96 object-cover rounded-lg"
-              />
-            </motion.div>
-          )}
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="prose prose-lg prose-invert max-w-none prose-headings:text-white prose-headings:font-bold prose-h1:text-4xl prose-h1:mb-6 prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-8 prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-2 prose-a:text-text-primary prose-strong:text-white prose-ul:text-text-secondary prose-ol:text-text-secondary"
+            className="prose prose-lg prose-invert max-w-none"
           >
-            {post.content.split('\n').map((paragraph, index) => {
-              if (paragraph.startsWith('## ')) {
-                return <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-white">{paragraph.substring(3)}</h2>;
-              }
-              if (paragraph.startsWith('# ')) {
-                return <h1 key={index} className="text-3xl font-bold mt-8 mb-4 text-white">{paragraph.substring(2)}</h1>;
-              }
-              if (paragraph.trim() === '') {
-                return <br key={index} />;
-              }
-              return <p key={index} className="mb-2 text-text-secondary leading-relaxed">{paragraph}</p>;
-            })}
+            <div 
+              className="blog-content text-text-secondary leading-relaxed"
+              dangerouslySetInnerHTML={{ 
+                __html: post.content
+                  .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold mt-8 mb-6 text-white">$1</h1>')
+                  .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold mt-6 mb-4 text-white">$1</h2>')
+                  .replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold mt-4 mb-3 text-white">$3</h3>')
+                  .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="w-full h-64 md:h-80 object-cover rounded-lg my-6" />')
+                  .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
+                  .replace(/\*([^*]+)\*/g, '<em class="italic">$1</em>')
+                  .replace(/^- (.+)$/gm, '<li class="mb-1">$1</li>')
+                  .replace(/\n\n/g, '</p><p class="mb-4 leading-relaxed">')
+                  .replace(/^(?!<[h|l|i]).+/gm, '<p class="mb-4 leading-relaxed">$&</p>')
+              }}
+            />
           </motion.div>
         </article>
       </div>

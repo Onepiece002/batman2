@@ -46,22 +46,22 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-dark-secondary dark:bg-dark-secondary border-t border-border-dark dark:border-border-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <footer className="bg-gradient-to-b from-dark-primary to-black dark:from-dark-primary dark:to-black border-t border-border-dark/30 dark:border-border-dark/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        {/* Main Footer Content - Compact */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        {/* Main Footer Content - Dark Theme Aesthetic */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           
           {/* Brand Section */}
-          <div className="space-y-3">
-            <div className="flex items-center space-x-2">
-              <Camera className="h-6 w-6 text-text-primary dark:text-text-primary" />
-              <h3 className="text-lg font-bold text-text-primary dark:text-white tracking-wide">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <Camera className="h-7 w-7 text-white dark:text-white" />
+              <h3 className="text-xl font-bold text-white dark:text-white tracking-wider">
                 PORTFOLIO
               </h3>
             </div>
-            <p className="text-text-secondary dark:text-text-secondary text-sm">
-              Visual storytelling through the art of photography.
+            <p className="text-gray-300 dark:text-gray-300 text-sm leading-relaxed">
+              Visual storytelling through the art of photography. Capturing moments that matter.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social) => {
@@ -72,7 +72,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2 rounded-full bg-dark-card dark:bg-dark-card border border-border-dark dark:border-border-dark transition-all duration-300 hover:border-text-primary dark:hover:border-text-primary hover:scale-110 ${social.color}`}
+                    className={`p-3 rounded-full bg-black/40 dark:bg-black/40 border border-gray-700 dark:border-gray-700 transition-all duration-300 hover:border-white dark:hover:border-white hover:scale-110 hover:bg-black/60 ${social.color}`}
                     aria-label={social.name}
                   >
                     <Icon className="h-4 w-4" />
@@ -83,16 +83,16 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-text-primary dark:text-white tracking-wide">
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold text-white dark:text-white tracking-wider uppercase">
               QUICK LINKS
             </h4>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-2">
               {quickLinks.map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href}
-                  className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors duration-300 text-sm"
+                  className="block text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition-colors duration-300 text-sm py-1 hover:translate-x-1 transform"
                 >
                   {link.name}
                 </Link>
@@ -101,44 +101,45 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-text-primary dark:text-white tracking-wide">
-              CONTACT
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold text-white dark:text-white tracking-wider uppercase">
+              GET IN TOUCH
             </h4>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-text-primary dark:text-text-primary flex-shrink-0" />
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-white dark:text-white flex-shrink-0" />
                 <a 
                   href="mailto:hello@photographer.com" 
-                  className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors text-sm"
+                  className="text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition-colors text-sm"
                 >
                   hello@photographer.com
                 </a>
               </div>
-              <p className="text-text-secondary dark:text-text-secondary text-sm">
-                San Francisco, CA
+              <p className="text-gray-300 dark:text-gray-300 text-sm flex items-center space-x-3">
+                <span className="w-4 h-4 flex-shrink-0"></span>
+                <span>San Francisco, CA</span>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section - Compact */}
-        <div className="border-t border-border-dark dark:border-border-dark pt-4">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
-            <p className="text-text-secondary dark:text-text-secondary text-sm">
-              &copy; {currentYear} Portfolio Photography. All rights reserved.
+        {/* Bottom Section - Elegant Dark */}
+        <div className="border-t border-gray-700/50 dark:border-gray-700/50 pt-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
+            <p className="text-gray-400 dark:text-gray-400 text-sm">
+              &copy; {currentYear} Rajesh Nunna Photography. All rights reserved.
             </p>
             
-            <div className="flex space-x-4 text-xs">
+            <div className="flex space-x-6 text-xs">
               <a 
                 href="/privacy" 
-                className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors"
+                className="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors uppercase tracking-wide"
               >
                 Privacy
               </a>
               <a 
                 href="/terms" 
-                className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors"
+                className="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors uppercase tracking-wide"
               >
                 Terms
               </a>

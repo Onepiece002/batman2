@@ -4,19 +4,18 @@
 
 This is a modern, responsive portfolio website and blog built with React, TypeScript, and Tailwind CSS. The application has been converted to a static site for Netlify deployment, featuring a Peter McKinnon-inspired dark theme with smooth parallax animations, 10 sample blog posts, and a comprehensive portfolio gallery with 15 categorized images.
 
-## Recent Changes (January 23, 2025)
+## Recent Changes (January 24, 2025)
 
-✓ **Static Site Conversion**: Removed database and authentication dependencies
-✓ **Content Population**: Added 10 detailed blog posts about photography
-✓ **Portfolio Gallery**: Added 15 portfolio images across 8 categories  
-✓ **Footer Component**: Created comprehensive footer with social links
-✓ **Netlify Configuration**: Added netlify.toml for deployment
-✓ **Static Contact Form**: Converted to mailto-based contact form
-✓ **Build Optimization**: Optimized for static deployment
-✓ **Dark/Light Theme Toggle**: Added theme switcher with CSS variable support
-✓ **Blog Card Aspect Ratio**: Updated to 1:1.5 ratio as requested
-✓ **Parallax Sections**: Removed "Nature's Canvas", repositioned "Beyond Boundaries"
-✓ **Fully Static**: Eliminated all API calls, database queries, and authentication
+✓ **Hero Section Enhancement**: Updated with larger dark forest background, increased font sizes
+✓ **Parallax Improvements**: Enhanced "Visual Storyteller" and "Capturing Moments" sections 
+✓ **Featured Work Scrolling**: Implemented horizontal mouse wheel scrolling functionality
+✓ **Blog System Consolidation**: Moved all blog content to single editable files in blogPosts.ts
+✓ **Navigation Theme Fix**: Fixed light/dark mode styling inconsistencies
+✓ **Footer Redesign**: Created compact, aesthetically matching dark theme footer
+✓ **Background Consistency**: Updated Latest Insights section to match website theme
+✓ **Typography Updates**: Applied custom h1 styling with specific positioning and font weights
+✓ **Content Management**: Simplified blog editing to single-file system with rich content
+✓ **Image Loading Fix**: Resolved first image display issue in Featured Work section
 
 ## User Preferences
 
