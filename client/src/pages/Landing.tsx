@@ -22,7 +22,7 @@ export default function Landing() {
   // Blog slider state
   const [blogScrollPosition, setBlogScrollPosition] = useState(0);
   const blogContainerRef = useRef<HTMLDivElement>(null);
-  const blogItemWidth = 300; // Width of each blog card including gap
+  const blogItemWidth = 250; // Width of each blog card including gap (smaller)
   const maxBlogScroll = Math.max(0, (latestPosts.length - 4) * blogItemWidth);
 
   useEffect(() => {
@@ -138,7 +138,7 @@ export default function Landing() {
                   {latestPosts.map((post, index) => (
                     <motion.div
                       key={post.id}
-                      className="flex-shrink-0 w-72"
+                      className="flex-shrink-0 w-56"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.01 }}

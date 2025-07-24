@@ -37,13 +37,13 @@ export default function BlogCard({ post, index }: BlogCardProps) {
           />
         </div>
       )}
-      <div className="p-4 flex-1 flex flex-col">
-        <div className="text-text-secondary text-xs mb-2">
+      <div className="p-3 flex-1 flex flex-col">
+        <div className="text-text-secondary text-xs mb-1">
           {formatDate(post.createdAt)}
         </div>
-        <h3 className="text-base font-semibold mb-3 leading-tight line-clamp-2 text-[#0f1017]">{post.title}</h3>
+        <h3 className="text-sm font-semibold mb-2 text-white leading-tight line-clamp-2">{post.title}</h3>
         <Link href={`/blog/${post.slug}`}>
-          <button className="btn-secondary w-full text-sm py-2">
+          <button className="btn-secondary w-full text-xs py-1.5">
             Read More
           </button>
         </Link>
