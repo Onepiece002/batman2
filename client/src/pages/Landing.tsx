@@ -15,8 +15,8 @@ export default function Landing() {
   // Featured images - first 6 from portfolio
   const featuredImages = portfolioImages.slice(0, 4);
 
-  // Latest blog posts - first 3 published posts
-  const latestPosts = blogPosts.filter(post => post.published).slice(0, 3);
+  // Latest blog posts - first 5 published posts
+  const latestPosts = blogPosts.filter(post => post.published).slice(0, 5);
 
   useEffect(() => {
     // Intersection Observer for fade-in animations
@@ -78,7 +78,7 @@ export default function Landing() {
           </div>
 
           {latestPosts.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-8 fade-in">
+            <div className="grid md:grid-cols-5 gap-6 fade-in">
               {latestPosts.map((post, index) => (
                 <BlogCard key={post.id} post={post} index={index} />
               ))}
