@@ -84,8 +84,8 @@ export default function Landing() {
           transition={{ duration: 1.2 }}
           className="text-center z-10 px-4"
         >
-          <h2 className="text-6xl md:text-8xl font-bold mb-8 text-white">BEYOND BOUNDARIES</h2>
-          <p className="text-xl md:text-3xl max-w-5xl mx-auto leading-relaxed text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">BEYOND BOUNDARIES</h2>
+          <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-white">
             Exploring new horizons in visual storytelling and pushing creative limits
           </p>
         </motion.div>
@@ -165,12 +165,16 @@ export default function Landing() {
           transition={{ duration: 1 }}
           className="text-center z-10 px-4"
         >
-          <h2 className="text-6xl md:text-8xl font-bold mb-8 text-white">CAPTURING MOMENTS</h2>
-          <p className="text-xl md:text-3xl max-w-4xl mx-auto leading-relaxed text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">CAPTURING MOMENTS</h2>
+          <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-white">
             Every frame tells a story, every click preserves a memory
           </p>
         </motion.div>
       </ParallaxSection>
+      
+      {/* Spacer section to separate Capturing Moments from Footer */}
+      <div className="bg-dark-primary py-20"></div>
+      
       <Footer />
     </div>
   );

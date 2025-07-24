@@ -87,88 +87,102 @@ export default function PinProtection({ onUnlock }: PinProtectionProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-95 backdrop-blur-sm z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: '#000000' }}>
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ 
           opacity: 1, 
           scale: 1,
-          x: isShaking ? [-10, 10, -10, 10, 0] : 0
+          y: 0,
+          x: isShaking ? [-8, 8, -8, 8, 0] : 0
         }}
         transition={{ 
-          duration: 0.5,
-          x: { duration: 0.5 }
+          duration: 0.6,
+          ease: "easeOut",
+          x: { duration: 0.4 }
         }}
-        className="bg-gray-900 p-8 rounded-2xl border border-gray-700 max-w-md w-full mx-4"
+        className="w-full max-w-md"
       >
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800 rounded-full mb-4">
-            {isBlocked ? <Clock className="w-8 h-8 text-red-400" /> : <Lock className="w-8 h-8 text-white" />}
-          </div>
-          <h1 className="text-2xl font-bold text-white mb-2">
-            {isBlocked ? "Access Blocked" : "Protected Access"}
-          </h1>
-          <p className="text-gray-400">
-            {isBlocked 
-              ? `Too many failed attempts. Try again in ${Math.ceil(timeUntilReset / (1000 * 60 * 60))} hours.`
-              : "Enter the PIN to access the website"
-            }
-          </p>
-          {!isBlocked && remainingAttempts < 3 && (
-            <p className="text-yellow-400 text-sm mt-2">
-              {remainingAttempts} attempt{remainingAttempts === 1 ? '' : 's'} remaining
-            </p>
-          )}
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="pin" className="block text-sm font-medium text-gray-300 mb-2">
-              Access Code
-            </label>
-            <input
-              type="password"
-              id="pin"
-              value={pin}
-              onChange={(e) => handlePinChange(e.target.value)}
-              placeholder={isBlocked ? "Access blocked" : "Enter access code"}
-              disabled={isBlocked}
-              className={`w-full px-4 py-3 border rounded-lg text-white text-center text-lg tracking-wider focus:outline-none focus:ring-2 transition-colors ${
-                isBlocked 
-                  ? 'bg-gray-700 border-red-500 cursor-not-allowed' 
-                  : 'bg-gray-800 border-gray-600 focus:ring-blue-500 focus:border-transparent'
-              }`}
-              autoFocus={!isBlocked}
-            />
-          </div>
-
-          {error && (
+        {/* Modern glass card effect */}
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
+          <div className="text-center mb-8">
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-red-400 text-sm text-center"
+              className="inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
             >
-              {error}
+              {isBlocked ? <Clock className="w-10 h-10 text-red-400" /> : <Lock className="w-10 h-10 text-white" />}
             </motion.div>
-          )}
+            <h1 className="text-3xl font-light text-white mb-3">
+              {isBlocked ? "Access Restricted" : "Access Required"}
+            </h1>
+            <p className="text-white/60 text-sm leading-relaxed">
+              {isBlocked 
+                ? `Security lockout active. Please wait ${Math.ceil(timeUntilReset / (1000 * 60 * 60))} hours to try again.`
+                : "Please enter your access code to continue"
+              }
+            </p>
+            {!isBlocked && remainingAttempts < 3 && (
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-orange-400 text-xs mt-3 font-medium"
+              >
+                {remainingAttempts} attempt{remainingAttempts === 1 ? '' : 's'} remaining
+              </motion.p>
+            )}
+          </div>
 
-          <button
-            type="submit"
-            disabled={pin.length === 0 || isBlocked}
-            className={`w-full font-semibold py-3 px-4 rounded-lg transition-colors ${
-              isBlocked 
-                ? 'bg-red-600 cursor-not-allowed' 
-                : 'bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed'
-            } text-white`}
-          >
-            {isBlocked ? "Access Blocked" : "Unlock Website"}
-          </button>
-        </form>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-3">
+              <label htmlFor="pin" className="block text-xs font-medium text-white/50 uppercase tracking-wider">
+                Access Code
+              </label>
+              <input
+                type="password"
+                id="pin"
+                value={pin}
+                onChange={(e) => handlePinChange(e.target.value)}
+                placeholder={isBlocked ? "● ● ● ● ● ● ●" : "Enter your access code"}
+                disabled={isBlocked}
+                className={`w-full px-6 py-4 rounded-xl text-white text-center text-lg font-mono tracking-widest focus:outline-none transition-all duration-300 ${
+                  isBlocked 
+                    ? 'bg-red-500/10 border border-red-500/30 cursor-not-allowed placeholder-red-400/50' 
+                    : 'bg-white/5 border border-white/20 focus:border-white/40 focus:bg-white/10 placeholder-white/30'
+                }`}
+                autoFocus={!isBlocked}
+                style={{ backdropFilter: 'blur(10px)' }}
+              />
+            </div>
 
-        <div className="mt-6 text-center">
-          <p className="text-gray-500 text-xs">
-            Protected content requires authorization
-          </p>
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-red-400 text-sm text-center"
+              >
+                {error}
+              </motion.div>
+            )}
+
+            <button
+              type="submit"
+              disabled={pin.length === 0 || isBlocked}
+              className={`w-full font-medium py-4 px-6 rounded-xl transition-all duration-300 ${
+                isBlocked 
+                  ? 'bg-red-500/20 border border-red-500/30 cursor-not-allowed text-red-400' 
+                  : 'bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white backdrop-blur-sm'
+              }`}
+              style={{ backdropFilter: 'blur(10px)' }}
+            >
+              {isBlocked ? "Access Restricted" : "Enter Site"}
+            </button>
+          </form>
+
+          <div className="mt-8 text-center">
+            <p className="text-white/30 text-xs uppercase tracking-wider">
+              Secure Access Portal
+            </p>
+          </div>
         </div>
       </motion.div>
     </div>

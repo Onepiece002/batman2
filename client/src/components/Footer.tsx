@@ -19,7 +19,7 @@ export default function Footer() {
   ]; 
 
   return ( 
-    <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-gray-700/30" style={{ backgroundColor: 'hsl(0, 0%, 3%)', borderTopColor: 'hsl(0, 0%, 20%)' }}> 
+    <footer className="border-t border-gray-700/30" style={{ backgroundColor: '#000000', borderTopColor: 'hsl(0, 0%, 20%)' }}> 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"> 
 
         {/* Main Footer Content - Always Dark Theme */} 

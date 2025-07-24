@@ -10,8 +10,8 @@ export default function LiftedHeroSection() {
   });
 
   // Create lifted effect - image moves up faster than scroll
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.3]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [1, 0.7, 0.2]);
 
   return (
     <div ref={ref} className="relative h-screen overflow-hidden mt-24">
@@ -25,7 +25,7 @@ export default function LiftedHeroSection() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="absolute inset-0 w-full h-[120vh]"
+        className="absolute inset-0 w-full h-[150vh]"
       />
       
       {/* Content - Empty for clean dark night effect */}

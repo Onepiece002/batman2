@@ -16,9 +16,9 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=750"
                 alt="About Me"
-                className="w-full rounded-lg shadow-lg"
+                className="w-3/4 mx-auto rounded-lg shadow-lg"
               />
             </motion.div>
             
