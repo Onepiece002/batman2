@@ -34,14 +34,26 @@ export default function FeaturedWork() {
   };
 
   return (
-    <section className="py-20 px-4 bg-dark-primary dark:bg-dark-primary">
+    <motion.section 
+      className="py-20 px-4 bg-dark-primary dark:bg-dark-primary"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl font-bold mb-4 text-text-primary dark:text-white">FEATURED WORK</h2>
           <p className="text-text-secondary dark:text-text-secondary text-lg">
             A curated selection of recent projects and creative endeavors
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative">
           {/* Navigation Buttons */}
@@ -78,17 +90,38 @@ export default function FeaturedWork() {
                 <motion.div
                   key={image.id}
                   className="flex-shrink-0 w-64 group"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.08 }}
                 >
                   <div className="relative overflow-hidden rounded-lg bg-dark-card dark:bg-dark-card shadow-xl">
-                    <div className="aspect-[4/5] overflow-hidden">
+                    <div className="aspect-[4/5] overflow-hidden bg-gray-800">
                       <img
                         src={image.imageUrl}
                         alt={image.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         loading={index < 3 ? "eager" : "lazy"}
+                        onError={(e) => {
+                          // If image fails to load, try to find next available image
+                          const currentTarget = e.currentTarget as HTMLImageElement;
+                          const fallbackImages = [
+                            'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&h=600&fit=crop',
+                            'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=600&fit=crop',
+                            'https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=800&h=600&fit=crop',
+                            'https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?w=800&h=600&fit=crop'
+                          ];
+                          
+                          const currentIndex = fallbackImages.findIndex(url => url === currentTarget.src);
+                          const nextIndex = currentIndex + 1;
+                          
+                          if (nextIndex < fallbackImages.length) {
+                            currentTarget.src = fallbackImages[nextIndex];
+                          } else {
+                            // Last resort fallback
+                            currentTarget.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop';
+                          }
+                        }}
                       />
                     </div>
                     
@@ -125,6 +158,6 @@ export default function FeaturedWork() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
