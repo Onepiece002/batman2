@@ -14,7 +14,7 @@ export default function LiftedHeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.3]);
 
   return (
-    <div ref={ref} className="relative h-screen overflow-hidden mt-16">
+    <div ref={ref} className="relative h-screen overflow-hidden mt-24">
       {/* Background Image with Lifted Effect */}
       <motion.div
         style={{
