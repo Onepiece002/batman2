@@ -29,6 +29,9 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Static Site Security**: Implemented browser-native encryption and IP-based rate limiting without databases or APIs
 ✓ **Image Error Handling**: Added robust fallback system for failed image loads in featured work section
 ✓ **Enhanced Animation Timing**: Improved featured work scroll animation to trigger much earlier with optimized intersection observer
+✓ **Lifted Hero Effect**: Replaced parallax with lifted scroll effect where hero image moves up faster than scroll, revealing content underneath
+✓ **Fixed Text Colors**: Made all section titles (Rajesh Nunna, Beyond Boundaries, Capturing Moments) white in both light and dark modes
+✓ **Hero Extension**: Extended hero image to cover navigation area with fixed overlay positioning
 
 ## User Preferences
 
