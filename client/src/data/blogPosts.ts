@@ -42,7 +42,7 @@ Always respect your subjects and understand the legal implications of photograph
     `,
     featuredImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-01-15T10:00:00Z",
     createdAt: "2024-01-15T10:00:00Z",
     updatedAt: "2024-01-15T10:00:00Z",
@@ -57,7 +57,7 @@ Always respect your subjects and understand the legal implications of photograph
     content: `
 # Mastering Natural Light: A Photographer's Greatest Tool
 
-![Natural Light](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop)
+![Natural Light](https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?w=800&h=400&fit=crop)
 
 Natural light is the most powerful tool in a photographer's arsenal. Understanding how to work with it can transform your photography from good to extraordinary.
 
@@ -65,7 +65,7 @@ Natural light is the most powerful tool in a photographer's arsenal. Understandi
 
 The hour after sunrise and before sunset provides the most flattering light for portraits and landscapes.
 
-![Golden Hour](https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?w=600&h=400&fit=crop)
+![Golden Hour](https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop)
 
 ### Morning Light Characteristics:
 - Soft and warm
@@ -97,9 +97,9 @@ Midday sun can be challenging, but with the right techniques:
 
 *"Light makes photography. Embrace light. Admire it. Love it. But above all, know light." - George Eastman*
     `,
-    featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-01-18T14:30:00Z",
     createdAt: "2024-01-18T14:30:00Z",
     updatedAt: "2024-01-18T14:30:00Z",
@@ -156,7 +156,7 @@ Enhance, don't replace. Good editing should feel natural and support the story y
     `,
     featuredImage: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-01-22T09:15:00Z",
     createdAt: "2024-01-22T09:15:00Z",
     updatedAt: "2024-01-22T09:15:00Z",
@@ -171,7 +171,7 @@ Enhance, don't replace. Good editing should feel natural and support the story y
     content: `
 # Landscape Photography: Patience and Preparation
 
-![Landscape Photography](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop)
+![Landscape Photography](https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=400&fit=crop)
 
 Landscape photography is a meditation on patience. Unlike other forms of photography where you can control many variables, landscape work requires you to work with nature's timeline.
 
@@ -216,9 +216,9 @@ Some of the best landscape photographs happen when conditions align perfectly. T
 
 *"You don't take a photograph, you make it." - Ansel Adams*
     `,
-    featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-01-25T16:45:00Z",
     createdAt: "2024-01-25T16:45:00Z",
     updatedAt: "2024-01-25T16:45:00Z",
@@ -284,7 +284,7 @@ Can inform and inspire your own monochrome vision.
     `,
     featuredImage: "https://images.unsplash.com/photo-1455940675424-d6dc14bdadf5?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-01-28T11:20:00Z",
     createdAt: "2024-01-28T11:20:00Z",
     updatedAt: "2024-01-28T11:20:00Z",
@@ -299,7 +299,7 @@ Can inform and inspire your own monochrome vision.
     content: `
 # Composition Techniques: The Foundation of Great Photography
 
-![Composition](https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&h=400&fit=crop)
+![Composition](https://images.unsplash.com/photo-1502780402662-acc01917173e?w=800&h=400&fit=crop)
 
 Good composition is the backbone of effective photography. It's what separates a snapshot from a photograph, and a good image from a great one.
 
@@ -310,7 +310,7 @@ The most fundamental composition guideline:
 - Place important elements along lines or intersections
 - Creates visual balance and interest
 
-![Rule of Thirds](https://images.unsplash.com/photo-1502780402662-acc01917173e?w=600&h=400&fit=crop)
+![Rule of Thirds](https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=400&fit=crop)
 
 ## Leading Lines
 
@@ -347,9 +347,9 @@ Once you understand composition rules, learn when to break them:
 
 *"The secret to photography is that the camera takes on the character and personality of the handler." - Walker Evans*
     `,
-    featuredImage: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&h=600&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1502780402662-acc01917173e?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-02-01T13:10:00Z",
     createdAt: "2024-02-01T13:10:00Z",
     updatedAt: "2024-02-01T13:10:00Z",
@@ -364,7 +364,7 @@ Once you understand composition rules, learn when to break them:
     content: `
 # Digital Post-Processing: Enhancing Your Vision
 
-![Post Processing](https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&h=400&fit=crop)
+![Post Processing](https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=800&h=400&fit=crop)
 
 Post-processing is where the magic happens. It's your opportunity to bring your creative vision to life and enhance what you captured in-camera.
 
@@ -376,7 +376,7 @@ Post-processing is where the magic happens. It's your opportunity to bring your 
 - Enhance natural beauty
 - Create artistic interpretation
 
-![Editing Workspace](https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=600&h=400&fit=crop)
+![Editing Workspace](https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop)
 
 ## Essential Tools
 
@@ -417,9 +417,9 @@ Post-processing is where the magic happens. It's your opportunity to bring your 
 
 *"Photography is not about cameras, gadgets and gizmos. Photography is about photographers." - Peter Adams*
     `,
-    featuredImage: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&h=600&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-02-05T15:30:00Z",
     createdAt: "2024-02-05T15:30:00Z",
     updatedAt: "2024-02-05T15:30:00Z",
@@ -434,7 +434,7 @@ Post-processing is where the magic happens. It's your opportunity to bring your 
     content: `
 # Building Your Photography Portfolio: Quality Over Quantity
 
-![Portfolio](https://images.unsplash.com/photo-1554098415-788601c80ac2?w=800&h=400&fit=crop)
+![Portfolio](https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=400&fit=crop)
 
 Your portfolio is your visual resume, your story told through images. It's often the first impression potential clients or collaborators will have of your work.
 
@@ -491,9 +491,9 @@ Your portfolio is your visual resume, your story told through images. It's often
 
 *"Your first 10,000 photographs are your worst." - Henri Cartier-Bresson*
     `,
-    featuredImage: "https://images.unsplash.com/photo-1554098415-788601c80ac2?w=800&h=600&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-02-08T10:45:00Z",
     createdAt: "2024-02-08T10:45:00Z",
     updatedAt: "2024-02-08T10:45:00Z",
@@ -570,7 +570,7 @@ Transitioning from photography enthusiast to professional requires more than jus
     `,
     featuredImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-02-12T14:15:00Z",
     createdAt: "2024-02-12T14:15:00Z",
     updatedAt: "2024-02-12T14:15:00Z",
@@ -645,7 +645,7 @@ Despite all the technological advances, photography remains fundamentally human:
     `,
     featuredImage: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
     author: "Rajesh Nunna",
-    authorId: 1,
+    authorId: "1",
     publishedAt: "2024-02-15T12:00:00Z",
     createdAt: "2024-02-15T12:00:00Z",
     updatedAt: "2024-02-15T12:00:00Z",
