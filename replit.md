@@ -34,7 +34,7 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Hero Extension**: Extended hero image to cover navigation area with fixed overlay positioning
 ✓ **Dark Forest Background**: Updated hero section to dark night forest image
 ✓ **Ultra-Early Animation Trigger**: Optimized Featured Work scroll animations to start when only 1% of section is visible
-✓ **Blog Layout Update**: Changed Latest Insights section to show 4 articles in balanced grid layout with light black borders
+✓ **Blog Layout Update**: Converted Latest Insights to sliding carousel with 6 articles (shows 4, slides to view more) with navigation buttons and mouse wheel support
 
 ## User Preferences
 

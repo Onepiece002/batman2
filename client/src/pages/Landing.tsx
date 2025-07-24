@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import ParallaxSection from "@/components/ParallaxSection";
 import LiftedHeroSection from "@/components/LiftedHeroSection";
@@ -15,8 +16,14 @@ export default function Landing() {
   // Featured images - first 6 from portfolio
   const featuredImages = portfolioImages.slice(0, 4);
 
-  // Latest blog posts - first 4 published posts
-  const latestPosts = blogPosts.filter(post => post.published).slice(0, 4);
+  // Latest blog posts - first 6 published posts
+  const latestPosts = blogPosts.filter(post => post.published).slice(0, 6);
+
+  // Blog slider state
+  const [blogScrollPosition, setBlogScrollPosition] = useState(0);
+  const blogContainerRef = useRef<HTMLDivElement>(null);
+  const blogItemWidth = 300; // Width of each blog card including gap
+  const maxBlogScroll = Math.max(0, (latestPosts.length - 4) * blogItemWidth);
 
   useEffect(() => {
     // Intersection Observer for fade-in animations
@@ -39,6 +46,25 @@ export default function Landing() {
 
     return () => observer.disconnect();
   }, []);
+
+  const scrollBlogTo = (direction: 'left' | 'right') => {
+    const scrollAmount = blogItemWidth * 2; // Scroll 2 items at a time
+    const newPosition = direction === 'left' 
+      ? Math.max(0, blogScrollPosition - scrollAmount)
+      : Math.min(maxBlogScroll, blogScrollPosition + scrollAmount);
+    
+    setBlogScrollPosition(newPosition);
+  };
+
+  const handleBlogWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    
+    // Horizontal scrolling: positive deltaY = scroll right, negative = scroll left
+    const scrollSpeed = 2;
+    const newPosition = Math.max(0, Math.min(maxBlogScroll, blogScrollPosition + (e.deltaY * scrollSpeed)));
+    
+    setBlogScrollPosition(newPosition);
+  };
 
   return (
     <div className="bg-dark-primary text-text-primary">
@@ -78,10 +104,51 @@ export default function Landing() {
           </div>
 
           {latestPosts.length > 0 ? (
-            <div className="grid md:grid-cols-4 gap-8 fade-in">
-              {latestPosts.map((post, index) => (
-                <BlogCard key={post.id} post={post} index={index} />
-              ))}
+            <div className="relative fade-in">
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => scrollBlogTo('left')}
+                disabled={blogScrollPosition === 0}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed text-white p-3 rounded-full transition-all"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+
+              <button
+                onClick={() => scrollBlogTo('right')}
+                disabled={blogScrollPosition >= maxBlogScroll}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed text-white p-3 rounded-full transition-all"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Scrollable Container */}
+              <div 
+                ref={blogContainerRef}
+                className="overflow-hidden px-12 relative cursor-grab active:cursor-grabbing"
+                onWheel={handleBlogWheel}
+              >
+                <div 
+                  className="flex gap-8 transition-transform duration-300 ease-out"
+                  style={{ 
+                    transform: `translateX(-${blogScrollPosition}px)`,
+                    width: `${latestPosts.length * blogItemWidth}px`
+                  }}
+                >
+                  {latestPosts.map((post, index) => (
+                    <motion.div
+                      key={post.id}
+                      className="flex-shrink-0 w-72"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.01 }}
+                      transition={{ duration: 0.6, delay: index * 0.08 }}
+                    >
+                      <BlogCard post={post} index={index} />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           ) : (
             <div className="text-center fade-in">
