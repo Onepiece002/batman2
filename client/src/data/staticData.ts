@@ -436,6 +436,457 @@ export const portfolioImages: PortfolioImage[] = [
     orderIndex: 15,
     createdAt: "2024-02-15T14:30:00Z",
     updatedAt: "2024-02-15T14:30:00Z"
+  },
+  // Additional portfolio images to expand collection
+  {
+    id: 16,
+    title: "Urban Night Portrait",
+    description: "Street portrait photography utilizing city lights and urban atmosphere.",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+    category: "portraits",
+    orderIndex: 16,
+    createdAt: "2024-02-18T20:15:00Z",
+    updatedAt: "2024-02-18T20:15:00Z"
+  },
+  {
+    id: 17,
+    title: "Mountain Peak Sunrise",
+    description: "Breathtaking alpine landscape captured at the first light of dawn.",
+    imageUrl: "https://images.unsplash.com/photo-1464822759844-d150baef493e?w=800&h=600&fit=crop",
+    category: "landscapes",
+    orderIndex: 17,
+    createdAt: "2024-02-20T06:45:00Z",
+    updatedAt: "2024-02-20T06:45:00Z"
+  },
+  {
+    id: 18,
+    title: "Street Market Chaos",
+    description: "Dynamic street photography capturing the energy of a bustling market.",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    category: "street",
+    orderIndex: 18,
+    createdAt: "2024-02-22T12:30:00Z",
+    updatedAt: "2024-02-22T12:30:00Z"
+  },
+  {
+    id: 19,
+    title: "Modern Glass Tower",
+    description: "Contemporary architectural photography emphasizing geometric patterns.",
+    imageUrl: "https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&h=600&fit=crop",
+    category: "architecture",
+    orderIndex: 19,
+    createdAt: "2024-02-25T15:20:00Z",
+    updatedAt: "2024-02-25T15:20:00Z"
+  },
+  {
+    id: 20,
+    title: "Bride's Preparation",
+    description: "Intimate wedding photography capturing the quiet moments before the ceremony.",
+    imageUrl: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=800&h=600&fit=crop",
+    category: "weddings",
+    orderIndex: 20,
+    createdAt: "2024-02-28T09:00:00Z",
+    updatedAt: "2024-02-28T09:00:00Z"
+  },
+  {
+    id: 21,
+    title: "Product Studio Shot",
+    description: "Professional product photography with clean lighting and composition.",
+    imageUrl: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    category: "commercial",
+    orderIndex: 21,
+    createdAt: "2024-03-02T14:45:00Z",
+    updatedAt: "2024-03-02T14:45:00Z"
+  },
+  {
+    id: 22,
+    title: "Forest Canopy",
+    description: "Nature photography exploring the intricate patterns of forest foliage.",
+    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
+    category: "nature",
+    orderIndex: 22,
+    createdAt: "2024-03-05T11:15:00Z",
+    updatedAt: "2024-03-05T11:15:00Z"
+  },
+  {
+    id: 23,
+    title: "City Lights Reflection",
+    description: "Night photography capturing urban reflections in still water.",
+    imageUrl: "https://images.unsplash.com/photo-1519659528534-7fd733a832a0?w=800&h=600&fit=crop",
+    category: "night",
+    orderIndex: 23,
+    createdAt: "2024-03-08T22:30:00Z",
+    updatedAt: "2024-03-08T22:30:00Z"
+  },
+  {
+    id: 24,
+    title: "Eagle in Flight",
+    description: "Wildlife photography capturing the majesty of birds of prey in action.",
+    imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+    category: "wildlife",
+    orderIndex: 24,
+    createdAt: "2024-03-10T16:20:00Z",
+    updatedAt: "2024-03-10T16:20:00Z"
+  },
+  {
+    id: 25,
+    title: "Haute Couture Editorial",
+    description: "High-end fashion photography with dramatic styling and lighting.",
+    imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop",
+    category: "fashion",
+    orderIndex: 25,
+    createdAt: "2024-03-12T13:45:00Z",
+    updatedAt: "2024-03-12T13:45:00Z"
+  },
+  {
+    id: 26,
+    title: "Concert Energy",
+    description: "Live music photography capturing the raw energy of performance.",
+    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
+    category: "events",
+    orderIndex: 26,
+    createdAt: "2024-03-15T21:00:00Z",
+    updatedAt: "2024-03-15T21:00:00Z"
+  },
+  {
+    id: 27,
+    title: "Geometric Shadows",
+    description: "Abstract photography exploring light, shadow, and architectural forms.",
+    imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+    category: "abstract",
+    orderIndex: 27,
+    createdAt: "2024-03-18T10:30:00Z",
+    updatedAt: "2024-03-18T10:30:00Z"
+  },
+  {
+    id: 28,
+    title: "Zen Garden",
+    description: "Minimalist photography of Japanese garden elements and tranquil spaces.",
+    imageUrl: "https://images.unsplash.com/photo-1544013778-c7c53323b3c8?w=800&h=600&fit=crop",
+    category: "minimalist",
+    orderIndex: 28,
+    createdAt: "2024-03-20T08:15:00Z",
+    updatedAt: "2024-03-20T08:15:00Z"
+  },
+  {
+    id: 29,
+    title: "Artist Portrait",
+    description: "Environmental portrait of a painter in their creative studio space.",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=600&fit=crop",
+    category: "portraits",
+    orderIndex: 29,
+    createdAt: "2024-03-22T14:20:00Z",
+    updatedAt: "2024-03-22T14:20:00Z"
+  },
+  {
+    id: 30,
+    title: "Desert Dunes",
+    description: "Landscape photography showcasing the flowing curves of sand dunes.",
+    imageUrl: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    category: "landscapes",
+    orderIndex: 30,
+    createdAt: "2024-03-25T12:45:00Z",
+    updatedAt: "2024-03-25T12:45:00Z"
+  },
+  {
+    id: 31,
+    title: "Subway Rush",
+    description: "Street photography capturing the motion and energy of urban commuters.",
+    imageUrl: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=800&h=600&fit=crop",
+    category: "street",
+    orderIndex: 31,
+    createdAt: "2024-03-28T17:30:00Z",
+    updatedAt: "2024-03-28T17:30:00Z"
+  },
+  {
+    id: 32,
+    title: "Cathedral Interior",
+    description: "Architectural photography emphasizing the grandeur of historic religious spaces.",
+    imageUrl: "https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=800&h=600&fit=crop",
+    category: "architecture",
+    orderIndex: 32,
+    createdAt: "2024-03-30T11:00:00Z",
+    updatedAt: "2024-03-30T11:00:00Z"
+  },
+  {
+    id: 33,
+    title: "First Dance",
+    description: "Wedding photography capturing the romance and emotion of the couple's first dance.",
+    imageUrl: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&h=600&fit=crop",
+    category: "weddings",
+    orderIndex: 33,
+    createdAt: "2024-04-02T19:45:00Z",
+    updatedAt: "2024-04-02T19:45:00Z"
+  },
+  {
+    id: 34,
+    title: "Corporate Team",
+    description: "Professional group photography for corporate branding and marketing.",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop",
+    category: "commercial",
+    orderIndex: 34,
+    createdAt: "2024-04-05T13:15:00Z",
+    updatedAt: "2024-04-05T13:15:00Z"
+  },
+  {
+    id: 35,
+    title: "Waterfall Cascade",
+    description: "Nature photography using long exposure to capture the smooth flow of water.",
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    category: "nature",
+    orderIndex: 35,
+    createdAt: "2024-04-08T07:20:00Z",
+    updatedAt: "2024-04-08T07:20:00Z"
+  },
+  {
+    id: 36,
+    title: "Star Trails",
+    description: "Night photography capturing the movement of stars across the dark sky.",
+    imageUrl: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=600&fit=crop",
+    category: "night",
+    orderIndex: 36,
+    createdAt: "2024-04-10T23:00:00Z",
+    updatedAt: "2024-04-10T23:00:00Z"
+  },
+  {
+    id: 37,
+    title: "Wolf Pack",
+    description: "Wildlife photography documenting the social dynamics of wild wolves.",
+    imageUrl: "https://images.unsplash.com/photo-1605127182140-4ac3c60e7dc3?w=800&h=600&fit=crop",
+    category: "wildlife",
+    orderIndex: 37,
+    createdAt: "2024-04-12T15:30:00Z",
+    updatedAt: "2024-04-12T15:30:00Z"
+  },
+  {
+    id: 38,
+    title: "Runway Model",
+    description: "Fashion photography from fashion week showcasing avant-garde designs.",
+    imageUrl: "https://images.unsplash.com/photo-1566479179817-c61b0b3e5bdc?w=800&h=600&fit=crop",
+    category: "fashion",
+    orderIndex: 38,
+    createdAt: "2024-04-15T18:45:00Z",
+    updatedAt: "2024-04-15T18:45:00Z"
+  },
+  {
+    id: 39,
+    title: "Festival Crowd",
+    description: "Event photography capturing the excitement and energy of music festivals.",
+    imageUrl: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop",
+    category: "events",
+    orderIndex: 39,
+    createdAt: "2024-04-18T20:15:00Z",
+    updatedAt: "2024-04-18T20:15:00Z"
+  },
+  {
+    id: 40,
+    title: "Light Painting",
+    description: "Abstract photography using long exposure and light painting techniques.",
+    imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+    category: "abstract",
+    orderIndex: 40,
+    createdAt: "2024-04-20T22:30:00Z",
+    updatedAt: "2024-04-20T22:30:00Z"
+  },
+  {
+    id: 41,
+    title: "Single Flower",
+    description: "Minimalist macro photography focusing on the delicate beauty of individual blooms.",
+    imageUrl: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&h=600&fit=crop",
+    category: "minimalist",
+    orderIndex: 41,
+    createdAt: "2024-04-22T09:45:00Z",
+    updatedAt: "2024-04-22T09:45:00Z"
+  },
+  {
+    id: 42,
+    title: "CEO Portrait",
+    description: "Corporate portrait photography emphasizing leadership and professionalism.",
+    imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=600&fit=crop",
+    category: "portraits",
+    orderIndex: 42,
+    createdAt: "2024-04-25T16:00:00Z",
+    updatedAt: "2024-04-25T16:00:00Z"
+  },
+  {
+    id: 43,
+    title: "Canyon Depths",
+    description: "Landscape photography exploring the dramatic geology of slot canyons.",
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    category: "landscapes",
+    orderIndex: 43,
+    createdAt: "2024-04-28T11:30:00Z",
+    updatedAt: "2024-04-28T11:30:00Z"
+  },
+  {
+    id: 44,
+    title: "Street Musician",
+    description: "Street photography capturing the passion and artistry of busking performers.",
+    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
+    category: "street",
+    orderIndex: 44,
+    createdAt: "2024-05-01T14:20:00Z",
+    updatedAt: "2024-05-01T14:20:00Z"
+  },
+  {
+    id: 45,
+    title: "Bridge Architecture",
+    description: "Architectural photography showcasing the engineering beauty of modern bridges.",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+    category: "architecture",
+    orderIndex: 45,
+    createdAt: "2024-05-03T12:15:00Z",
+    updatedAt: "2024-05-03T12:15:00Z"
+  },
+  {
+    id: 46,
+    title: "Wedding Ceremony",
+    description: "Wedding photography documenting the sacred moments of the ceremony.",
+    imageUrl: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=600&fit=crop",
+    category: "weddings",
+    orderIndex: 46,
+    createdAt: "2024-05-05T15:45:00Z",
+    updatedAt: "2024-05-05T15:45:00Z"
+  },
+  {
+    id: 47,
+    title: "Tech Startup",
+    description: "Commercial photography showcasing innovative technology and workspace culture.",
+    imageUrl: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    category: "commercial",
+    orderIndex: 47,
+    createdAt: "2024-05-08T10:30:00Z",
+    updatedAt: "2024-05-08T10:30:00Z"
+  },
+  {
+    id: 48,
+    title: "Butterfly Close-up",
+    description: "Nature macro photography revealing the intricate patterns of butterfly wings.",
+    imageUrl: "https://images.unsplash.com/photo-1544013778-c7c53323b3c8?w=800&h=600&fit=crop",
+    category: "nature",
+    orderIndex: 48,
+    createdAt: "2024-05-10T13:45:00Z",
+    updatedAt: "2024-05-10T13:45:00Z"
+  },
+  {
+    id: 49,
+    title: "Aurora Borealis",
+    description: "Night photography capturing the ethereal beauty of the northern lights.",
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    category: "night",
+    orderIndex: 49,
+    createdAt: "2024-05-12T01:20:00Z",
+    updatedAt: "2024-05-12T01:20:00Z"
+  },
+  {
+    id: 50,
+    title: "Bear in Wilderness",
+    description: "Wildlife photography documenting the majesty of bears in their natural habitat.",
+    imageUrl: "https://images.unsplash.com/photo-1549366021-9f761d040a94?w=800&h=600&fit=crop",
+    category: "wildlife",
+    orderIndex: 50,
+    createdAt: "2024-05-15T08:00:00Z",
+    updatedAt: "2024-05-15T08:00:00Z"
+  },
+  {
+    id: 51,
+    title: "Vintage Fashion",
+    description: "Fashion photography with retro styling and classic elegance.",
+    imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop",
+    category: "fashion",
+    orderIndex: 51,
+    createdAt: "2024-05-18T17:30:00Z",
+    updatedAt: "2024-05-18T17:30:00Z"
+  },
+  {
+    id: 52,
+    title: "Conference Speaker",
+    description: "Event photography capturing keynote presentations and audience engagement.",
+    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+    category: "events",
+    orderIndex: 52,
+    createdAt: "2024-05-20T11:45:00Z",
+    updatedAt: "2024-05-20T11:45:00Z"
+  },
+  {
+    id: 53,
+    title: "Color Spectrum",
+    description: "Abstract photography exploring the relationship between color and emotion.",
+    imageUrl: "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=800&h=600&fit=crop",
+    category: "abstract",
+    orderIndex: 53,
+    createdAt: "2024-05-22T19:15:00Z",
+    updatedAt: "2024-05-22T19:15:00Z"
+  },
+  {
+    id: 54,
+    title: "Empty Beach",
+    description: "Minimalist seascape photography emphasizing solitude and natural beauty.",
+    imageUrl: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop",
+    category: "minimalist",
+    orderIndex: 54,
+    createdAt: "2024-05-25T06:30:00Z",
+    updatedAt: "2024-05-25T06:30:00Z"
+  },
+  {
+    id: 55,
+    title: "Child Portrait",
+    description: "Family portrait photography capturing the innocence and wonder of childhood.",
+    imageUrl: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&h=600&fit=crop",
+    category: "portraits",
+    orderIndex: 55,
+    createdAt: "2024-05-28T14:45:00Z",
+    updatedAt: "2024-05-28T14:45:00Z"
+  },
+  {
+    id: 56,
+    title: "Volcanic Landscape",
+    description: "Dramatic landscape photography of volcanic terrain and lava formations.",
+    imageUrl: "https://images.unsplash.com/photo-1464822759844-d150baef493e?w=800&h=600&fit=crop",
+    category: "landscapes",
+    orderIndex: 56,
+    createdAt: "2024-05-30T09:20:00Z",
+    updatedAt: "2024-05-30T09:20:00Z"
+  },
+  {
+    id: 57,
+    title: "Night Market",
+    description: "Street photography capturing the vibrant atmosphere of evening food markets.",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    category: "street",
+    orderIndex: 57,
+    createdAt: "2024-06-02T21:00:00Z",
+    updatedAt: "2024-06-02T21:00:00Z"
+  },
+  {
+    id: 58,
+    title: "Spiral Staircase",
+    description: "Architectural photography emphasizing the geometric beauty of spiral forms.",
+    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+    category: "architecture",
+    orderIndex: 58,
+    createdAt: "2024-06-05T16:30:00Z",
+    updatedAt: "2024-06-05T16:30:00Z"
+  },
+  {
+    id: 59,
+    title: "Reception Dance",
+    description: "Wedding photography capturing the joy and celebration of the reception party.",
+    imageUrl: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=800&h=600&fit=crop",
+    category: "weddings",
+    orderIndex: 59,
+    createdAt: "2024-06-08T22:15:00Z",
+    updatedAt: "2024-06-08T22:15:00Z"
+  },
+  {
+    id: 60,
+    title: "Restaurant Interior",
+    description: "Commercial photography showcasing culinary spaces and dining experiences.",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop",
+    category: "commercial",
+    orderIndex: 60,
+    createdAt: "2024-06-10T12:45:00Z",
+    updatedAt: "2024-06-10T12:45:00Z"
   }
 ];
 

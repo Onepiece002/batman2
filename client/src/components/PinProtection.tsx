@@ -11,12 +11,11 @@ export default function PinProtection({ onUnlock }: PinProtectionProps) {
   const [error, setError] = useState("");
   const [isShaking, setIsShaking] = useState(false);
 
-  const correctPin = "232502";
+  const correctPin = "250323069802@secret";
 
   const handlePinChange = (value: string) => {
-    // Only allow numbers and limit to 6 digits
-    const numericValue = value.replace(/\D/g, "").slice(0, 6);
-    setPin(numericValue);
+    // Allow alphanumeric characters and special symbols
+    setPin(value);
     setError("");
   };
 
@@ -61,16 +60,15 @@ export default function PinProtection({ onUnlock }: PinProtectionProps) {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="pin" className="block text-sm font-medium text-gray-300 mb-2">
-              PIN Code
+              Access Code
             </label>
             <input
               type="password"
               id="pin"
               value={pin}
               onChange={(e) => handlePinChange(e.target.value)}
-              placeholder="Enter 6-digit PIN"
+              placeholder="Enter access code"
               className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white text-center text-lg tracking-wider focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              maxLength={6}
               autoFocus
             />
           </div>
@@ -87,7 +85,7 @@ export default function PinProtection({ onUnlock }: PinProtectionProps) {
 
           <button
             type="submit"
-            disabled={pin.length !== 6}
+            disabled={pin.length === 0}
             className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-colors"
           >
             Unlock Website

@@ -42,9 +42,9 @@ export default function Landing() {
   return (
     <div className="bg-dark-primary text-text-primary">
       <Navigation />
-      {/* Hero Section with Parallax - Larger with Dark Forest Theme */}
+      {/* Hero Section with Parallax - Dark Night Theme */}
       <ParallaxSection
-        backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
+        backgroundImage="https://images.unsplash.com/photo-1519659528534-7fd733a832a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
         height="min-h-screen"
       >
         <motion.div
