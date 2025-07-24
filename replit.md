@@ -18,6 +18,8 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Image Loading Fix**: Resolved first image display issue in Featured Work section
 ✓ **Pin Protection System**: Added secure access control with PIN 232502 and black blur overlay
 ✓ **Golden Hour Portrait Fix**: Updated portfolio image URL to ensure proper display
+✓ **Favicon Update**: Changed to "RJ" white letters on black background
+✓ **Logo Redesign**: Updated navigation and footer logo to "Rajesh Nunna" in Dancing Script cursive font
 
 ## User Preferences
 

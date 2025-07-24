@@ -56,8 +56,8 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Camera className="h-7 w-7 text-white dark:text-white" />
-              <h3 className="text-xl font-bold text-white dark:text-white tracking-wider">
-                PORTFOLIO
+              <h3 className="text-2xl font-cursive text-white dark:text-white" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                Rajesh Nunna
               </h3>
             </div>
             <p className="text-gray-300 dark:text-gray-300 text-sm leading-relaxed">

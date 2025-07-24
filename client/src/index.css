@@ -272,3 +272,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-primary);
 }
+
+/* Cursive font for logo */
+.font-cursive {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
