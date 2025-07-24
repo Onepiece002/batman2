@@ -68,10 +68,7 @@ export default function Landing() {
 
   return (
     <div className="bg-dark-primary text-text-primary">
-      {/* Fixed Navigation positioned above hero */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <Navigation />
-      </div>
+      <Navigation />
       {/* Hero Section with Lifted Scroll Effect */}
       <LiftedHeroSection />
       {/* Featured Work Preview */}

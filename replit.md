@@ -36,6 +36,7 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Ultra-Early Animation Trigger**: Optimized Featured Work scroll animations to start when only 1% of section is visible
 ✓ **Blog Layout Update**: Converted Latest Insights to sliding carousel with 6 smaller articles (shows 4, slides to view more) with navigation buttons and mouse wheel support
 ✓ **Theme Support**: Updated blog cards to properly adapt backgrounds and text colors for both light and dark modes
+✓ **Clean Hero Section**: Updated hero to dark night sky image, removed text/button content, and prevented extension into header area
 
 ## User Preferences
 
