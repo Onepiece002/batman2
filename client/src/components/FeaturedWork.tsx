@@ -38,7 +38,7 @@ export default function FeaturedWork() {
       className="py-20 px-4 bg-dark-primary dark:bg-dark-primary"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.01 }}
       transition={{ duration: 0.8 }}
     >
       <div className="max-w-7xl mx-auto">
@@ -46,7 +46,7 @@ export default function FeaturedWork() {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold mb-4 text-text-primary dark:text-white">FEATURED WORK</h2>
@@ -92,7 +92,7 @@ export default function FeaturedWork() {
                   className="flex-shrink-0 w-64 group"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.01 }}
                   transition={{ duration: 0.6, delay: index * 0.08 }}
                 >
                   <div className="relative overflow-hidden rounded-lg bg-dark-card dark:bg-dark-card shadow-xl">
