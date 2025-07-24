@@ -22,8 +22,44 @@ export default function Landing() {
   // Blog slider state
   const [blogScrollPosition, setBlogScrollPosition] = useState(0);
   const blogContainerRef = useRef<HTMLDivElement>(null);
-  const blogItemWidth = 250; // Width of each blog card including gap (smaller)
-  const maxBlogScroll = Math.max(0, (latestPosts.length - 4) * blogItemWidth);
+  const blogSectionRef = useRef<HTMLDivElement>(null);
+  const blogItemWidth = 320; // Increased width for larger cards
+  const maxBlogScroll = Math.max(0, (latestPosts.length - 3) * blogItemWidth);
+
+  // Handle scroll-based sliding effect for blog section
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!blogSectionRef.current) return;
+
+      const rect = blogSectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      
+      // Start sliding when the "LATEST INSIGHTS" heading comes into view
+      const startPoint = windowHeight * 0.9;
+      const endPoint = -sectionHeight;
+      
+      if (sectionTop <= startPoint && sectionTop >= endPoint) {
+        const totalDistance = startPoint - endPoint;
+        const currentDistance = startPoint - sectionTop;
+        const progress = currentDistance / totalDistance;
+        const clampedProgress = Math.max(0, Math.min(1, progress));
+        
+        // Apply smooth easing
+        const easedProgress = clampedProgress * clampedProgress * clampedProgress * (clampedProgress * (clampedProgress * 6 - 15) + 10);
+        
+        // Set scroll position with reduced speed
+        setBlogScrollPosition(easedProgress * maxBlogScroll * 0.5);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [maxBlogScroll]);
 
   useEffect(() => {
     // Intersection Observer for fade-in animations
@@ -56,16 +92,6 @@ export default function Landing() {
     setBlogScrollPosition(newPosition);
   };
 
-  const handleBlogWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    
-    // Horizontal scrolling: positive deltaY = scroll right, negative = scroll left
-    const scrollSpeed = 2;
-    const newPosition = Math.max(0, Math.min(maxBlogScroll, blogScrollPosition + (e.deltaY * scrollSpeed)));
-    
-    setBlogScrollPosition(newPosition);
-  };
-
   return (
     <div className="bg-dark-primary text-text-primary">
       <Navigation />
@@ -91,17 +117,23 @@ export default function Landing() {
         </motion.div>
       </ParallaxSection>
       {/* Latest Blog Posts */}
-      <section className="py-20 px-4 bg-dark-primary dark:bg-dark-primary">
+      <section ref={blogSectionRef} className="py-20 px-4 bg-dark-primary dark:bg-dark-primary">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 fade-in">
-            <h2 className="text-4xl font-bold mb-4">LATEST INSIGHTS</h2>
-            <p className="text-text-secondary text-lg">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl font-bold mb-4 text-text-primary dark:text-white">LATEST INSIGHTS</h2>
+            <p className="text-text-secondary dark:text-text-secondary text-lg">
               Thoughts on photography, creativity, and visual storytelling
             </p>
-          </div>
+          </motion.div>
 
           {latestPosts.length > 0 ? (
-            <div className="relative fade-in">
+            <div className="relative">
               {/* Navigation Buttons */}
               <button
                 onClick={() => scrollBlogTo('left')}
@@ -122,8 +154,7 @@ export default function Landing() {
               {/* Scrollable Container */}
               <div 
                 ref={blogContainerRef}
-                className="overflow-hidden px-12 relative cursor-grab active:cursor-grabbing"
-                onWheel={handleBlogWheel}
+                className="overflow-hidden px-12 relative"
               >
                 <div 
                   className="flex gap-8 transition-transform duration-300 ease-out"
@@ -135,7 +166,7 @@ export default function Landing() {
                   {latestPosts.map((post, index) => (
                     <motion.div
                       key={post.id}
-                      className="flex-shrink-0 w-56"
+                      className="flex-shrink-0 w-72"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.01 }}
@@ -148,7 +179,7 @@ export default function Landing() {
               </div>
             </div>
           ) : (
-            <div className="text-center fade-in">
+            <div className="text-center">
               <p className="text-text-secondary">No blog posts available.</p>
             </div>
           )}
