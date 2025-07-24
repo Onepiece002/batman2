@@ -11,7 +11,7 @@ export default function FeaturedWork() {
 
   // Get first 8 images for featured work
   const featuredImages = portfolioImages.slice(0, 8);
-  const itemWidth = 320; // Width of each item including gap
+  const itemWidth = 280; // Width of each item including gap
   const maxScroll = Math.max(0, (featuredImages.length - 3) * itemWidth);
 
   const handleWheel = (e: React.WheelEvent) => {
@@ -77,7 +77,7 @@ export default function FeaturedWork() {
               {featuredImages.map((image, index) => (
                 <motion.div
                   key={image.id}
-                  className="flex-shrink-0 w-80 group"
+                  className="flex-shrink-0 w-64 group"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
