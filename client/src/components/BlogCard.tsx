@@ -34,11 +34,11 @@ export default function BlogCard({ post, index }: BlogCardProps) {
           />
         </div>
       )}
-      <div className="p-6 flex-1 flex flex-col">
-        <div className="text-text-secondary text-sm mb-3">
+      <div className="p-4 flex-1 flex flex-col">
+        <div className="text-text-secondary text-xs mb-2">
           {formatDate(post.createdAt)} • 5 min read
         </div>
-        <h3 className="text-xl font-semibold mb-3 text-white leading-tight">{post.title}</h3>
+        <h3 className="text-lg font-semibold mb-3 text-white leading-tight">{post.title}</h3>
         <Link href={`/blog/${post.slug}`}>
           <button className="btn-secondary w-full">
             Read More
