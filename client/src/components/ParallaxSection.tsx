@@ -32,7 +32,7 @@ export default function ParallaxSection({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="absolute inset-0 w-full h-[120vh]"
+        className="absolute inset-0 w-full h-[100vh]"
       />
       <div className="relative z-10 text-center">{children}</div>
     </div>

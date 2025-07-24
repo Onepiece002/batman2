@@ -10,7 +10,7 @@ import { Link } from "wouter";
 import { blogPosts, portfolioImages } from "@/data/staticData";
 
 export default function Landing() {
-  // Featured images - first 4 from portfolio
+  // Featured images - first 6 from portfolio
   const featuredImages = portfolioImages.slice(0, 4);
   
   // Latest blog posts - first 3 published posts
