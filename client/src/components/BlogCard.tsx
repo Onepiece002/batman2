@@ -22,7 +22,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-dark-card rounded-lg overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 h-full flex flex-col border border-gray-800"
+      className="bg-white dark:bg-dark-card rounded-lg overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-gray-800"
     >
       {post.featuredImage && (
         <div className="aspect-square overflow-hidden">
@@ -38,10 +38,10 @@ export default function BlogCard({ post, index }: BlogCardProps) {
         </div>
       )}
       <div className="p-3 flex-1 flex flex-col">
-        <div className="text-text-secondary text-xs mb-1">
+        <div className="text-gray-600 dark:text-text-secondary text-xs mb-1">
           {formatDate(post.createdAt)}
         </div>
-        <h3 className="text-sm font-semibold mb-2 text-white leading-tight line-clamp-2">{post.title}</h3>
+        <h3 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white leading-tight line-clamp-2">{post.title}</h3>
         <Link href={`/blog/${post.slug}`}>
           <button className="btn-secondary w-full text-xs py-1.5">
             Read More
