@@ -1,6 +1,8 @@
 import { Switch, Route } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import PinProtection from "@/components/PinProtection";
+import { usePinProtection } from "@/hooks/usePinProtection";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Portfolio from "@/pages/Portfolio";
@@ -24,6 +26,25 @@ function Router() {
 }
 
 function App() {
+  const { isUnlocked, isLoading, unlock } = usePinProtection();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!isUnlocked) {
+    return (
+      <TooltipProvider>
+        <PinProtection onUnlock={unlock} />
+        <Toaster />
+      </TooltipProvider>
+    );
+  }
+
   return (
     <TooltipProvider>
       <Toaster />
