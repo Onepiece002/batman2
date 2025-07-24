@@ -13,7 +13,7 @@ import { blogPosts } from "@/data/blogPosts";
 export default function Landing() {
   // Featured images - first 6 from portfolio
   const featuredImages = portfolioImages.slice(0, 4);
-  
+
   // Latest blog posts - first 3 published posts
   const latestPosts = blogPosts.filter(post => post.published).slice(0, 3);
 
@@ -53,7 +53,9 @@ export default function Landing() {
           transition={{ duration: 1.2, delay: 0.5 }}
           className="text-center z-10 px-4"
         >
-          <h1 className="md:text-8xl lg:text-9xl mb-8 tracking-tight text-[58px] ml-[1000px] mr-[1000px] font-normal" style={{ color: '#ffffff' }}>Rajesh Nunna</h1>
+          <h1 className="md:text-6xl lg:text-7xl mb-8 tracking-tight text-[48px] ml-[1000px] mr-[1000px] font-normal" style={{ color: '#ffffff' }}>
+            Rajesh Nunna
+          </h1>
           <p className="text-xl md:text-3xl lg:text-4xl mb-12 max-w-4xl mx-auto leading-relaxed" style={{ color: '#ffffff' }}>
             Creating compelling narratives through the lens of creativity and innovation
           </p>
