@@ -61,7 +61,7 @@ export default function Landing() {
           </p>
           <div className="flex justify-center items-center">
             <Link href="/portfolio">
-              <button className="group relative px-12 py-6 bg-gradient-to-r from-text-primary to-text-secondary text-dark-primary font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-transparent hover:border-white hover:bg-white hover:text-black hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-3xl text-lg">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-text-primary to-text-secondary text-dark-primary font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-transparent hover:border-white hover:bg-white hover:text-black hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-3xl text-base">
                 <span className="relative z-10">VIEW PORTFOLIO</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-text-secondary to-text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
