@@ -20,7 +20,7 @@ export default function ParallaxSection({
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <div ref={ref} className={`relative ${height} flex items-center justify-center overflow-hidden ${className}`}>
@@ -32,7 +32,7 @@ export default function ParallaxSection({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="absolute inset-0 w-full h-[100vh]"
+        className="absolute inset-0 w-full h-[120vh]"
       />
       <div className="relative z-10 text-center">{children}</div>
     </div>

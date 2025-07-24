@@ -5,10 +5,7 @@ import {
   Facebook, 
   Youtube, 
   Mail, 
-  Phone, 
-  MapPin,
-  Camera,
-  Heart
+  Camera
 } from "lucide-react";
 
 export default function Footer() {
@@ -48,33 +45,25 @@ export default function Footer() {
     { name: "Contact", href: "/contact" }
   ];
 
-  const services = [
-    "Portrait Photography",
-    "Wedding Photography", 
-    "Street Photography",
-    "Landscape Photography",
-    "Commercial Photography",
-    "Event Photography"
-  ];
-
   return (
-    <footer className="bg-dark-secondary border-t border-border-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+    <footer className="bg-dark-secondary dark:bg-dark-secondary border-t border-border-dark dark:border-border-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        {/* Main Footer Content - Compact */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           
           {/* Brand Section */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <Camera className="h-8 w-8 text-text-primary" />
-              <h3 className="text-2xl font-bold text-white tracking-wider">
+          <div className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <Camera className="h-6 w-6 text-text-primary dark:text-text-primary" />
+              <h3 className="text-lg font-bold text-text-primary dark:text-white tracking-wide">
                 PORTFOLIO
               </h3>
             </div>
-            <p className="text-text-secondary leading-relaxed">
-              Capturing life's most precious moments through the art of visual storytelling. 
-              Every frame tells a story, every shot captures an emotion.
+            <p className="text-text-secondary dark:text-text-secondary text-sm">
+              Visual storytelling through the art of photography.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -83,10 +72,10 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2 rounded-full bg-dark-card border border-border-dark transition-all duration-300 hover:border-text-primary hover:scale-110 ${social.color}`}
+                    className={`p-2 rounded-full bg-dark-card dark:bg-dark-card border border-border-dark dark:border-border-dark transition-all duration-300 hover:border-text-primary dark:hover:border-text-primary hover:scale-110 ${social.color}`}
                     aria-label={social.name}
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-4 w-4" />
                   </a>
                 );
               })}
@@ -94,94 +83,64 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-white tracking-wide">
+          <div className="space-y-3">
+            <h4 className="text-sm font-semibold text-text-primary dark:text-white tracking-wide">
               QUICK LINKS
             </h4>
-            <ul className="space-y-3">
+            <div className="grid grid-cols-2 gap-2">
               {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-text-secondary hover:text-white transition-colors duration-300 flex items-center group"
-                  >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-text-primary transition-all duration-300 mr-0 group-hover:mr-3"></span>
-                    {link.name}
-                  </Link>
-                </li>
+                <Link 
+                  key={link.name}
+                  href={link.href}
+                  className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors duration-300 text-sm"
+                >
+                  {link.name}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-
-
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-white tracking-wide">
-              GET IN TOUCH
+          <div className="space-y-3">
+            <h4 className="text-sm font-semibold text-text-primary dark:text-white tracking-wide">
+              CONTACT
             </h4>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-text-secondary">Email</p>
-                  <a 
-                    href="mailto:hello@photographer.com" 
-                    className="text-white hover:text-text-primary transition-colors"
-                  >
-                    hello@photographer.com
-                  </a>
-                </div>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-text-primary dark:text-text-primary flex-shrink-0" />
+                <a 
+                  href="mailto:hello@photographer.com" 
+                  className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors text-sm"
+                >
+                  hello@photographer.com
+                </a>
               </div>
-              
-              <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-text-secondary">Phone</p>
-                  <a 
-                    href="tel:+1234567890" 
-                    className="text-white hover:text-text-primary transition-colors"
-                  >
-                    +1 (234) 567-8900
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-text-secondary">Location</p>
-                  <p className="text-white">
-                    San Francisco, CA
-                  </p>
-                </div>
-              </div>
+              <p className="text-text-secondary dark:text-text-secondary text-sm">
+                San Francisco, CA
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-border-dark mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-text-secondary">
-              <span>&copy; {currentYear} Portfolio Photography.</span>
-              <span>Made with</span>
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
-              <span>for visual storytelling.</span>
-            </div>
+        {/* Bottom Section - Compact */}
+        <div className="border-t border-border-dark dark:border-border-dark pt-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+            <p className="text-text-secondary dark:text-text-secondary text-sm">
+              &copy; {currentYear} Portfolio Photography. All rights reserved.
+            </p>
             
-            <div className="flex space-x-6 text-sm">
+            <div className="flex space-x-4 text-xs">
               <a 
                 href="/privacy" 
-                className="text-text-secondary hover:text-white transition-colors"
+                className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors"
               >
-                Privacy Policy
+                Privacy
               </a>
               <a 
                 href="/terms" 
-                className="text-text-secondary hover:text-white transition-colors"
+                className="text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white transition-colors"
               >
-                Terms of Service
+                Terms
               </a>
             </div>
           </div>

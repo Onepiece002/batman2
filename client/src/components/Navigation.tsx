@@ -21,12 +21,12 @@ export default function Navigation() {
 
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm border-b border-border-dark">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 dark:bg-dark-primary/90 backdrop-blur-sm border-b border-border-dark dark:border-border-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold tracking-wider text-white hover:text-gray-300 transition-colors">
+            <Link href="/" className="text-xl font-bold tracking-wider text-text-primary dark:text-white hover:text-text-secondary dark:hover:text-gray-300 transition-colors">
               PORTFOLIO
             </Link>
           </div>
@@ -40,8 +40,8 @@ export default function Navigation() {
                   href={item.path}
                   className={`nav-item text-sm font-medium transition-colors ${
                     isActive(item.path)
-                      ? "text-white active"
-                      : "text-text-secondary hover:text-white"
+                      ? "text-text-primary dark:text-white font-semibold"
+                      : "text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -57,7 +57,7 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:text-gray-300"
+              className="text-text-primary dark:text-white hover:text-text-secondary dark:hover:text-gray-300"
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -70,7 +70,7 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`mobile-menu fixed top-16 left-0 w-full h-screen bg-dark-primary md:hidden ${mobileMenuOpen ? 'open' : ''}`}>
+      <div className={`mobile-menu fixed top-16 left-0 w-full h-screen bg-dark-primary dark:bg-dark-primary md:hidden ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="px-4 py-6 space-y-6">
           {navItems.map((item) => (
             <Link
@@ -78,7 +78,7 @@ export default function Navigation() {
               href={item.path}
               onClick={() => setMobileMenuOpen(false)}
               className={`block text-lg font-medium transition-colors ${
-                isActive(item.path) ? "text-white" : "text-text-secondary hover:text-white"
+                isActive(item.path) ? "text-text-primary dark:text-white font-semibold" : "text-text-secondary dark:text-text-secondary hover:text-text-primary dark:hover:text-white"
               }`}
             >
               {item.label}

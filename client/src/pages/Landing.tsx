@@ -42,26 +42,26 @@ export default function Landing() {
     <div className="bg-dark-primary text-text-primary">
       <Navigation />
 
-      {/* Hero Section with Parallax */}
+      {/* Hero Section with Parallax - Larger with Dark Forest Theme */}
       <ParallaxSection
-        backgroundImage="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
-        height="h-screen"
+        backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
+        height="min-h-screen"
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-center z-10"
+          transition={{ duration: 1.2, delay: 0.5 }}
+          className="text-center z-10 px-4"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tight">
             VISUAL STORYTELLER
           </h1>
-          <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-3xl lg:text-4xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
             Creating compelling narratives through the lens of creativity and innovation
           </p>
           <div className="flex justify-center items-center">
             <Link href="/portfolio">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-text-primary to-text-secondary text-dark-primary font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-transparent hover:border-white hover:bg-white hover:text-black hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="group relative px-12 py-6 bg-gradient-to-r from-text-primary to-text-secondary text-dark-primary font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-transparent hover:border-white hover:bg-white hover:text-black hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-3xl text-lg">
                 <span className="relative z-10">VIEW PORTFOLIO</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-text-secondary to-text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
@@ -75,17 +75,17 @@ export default function Landing() {
 
       {/* Beyond Boundaries Parallax Section */}
       <ParallaxSection
-        backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1200"
+        backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
         height="h-screen"
       >
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center z-10"
+          transition={{ duration: 1.2 }}
+          className="text-center z-10 px-4"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">BEYOND BOUNDARIES</h2>
-          <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto">
+          <h2 className="text-6xl md:text-8xl font-bold mb-8">BEYOND BOUNDARIES</h2>
+          <p className="text-xl md:text-3xl text-text-secondary max-w-5xl mx-auto leading-relaxed">
             Exploring new horizons in visual storytelling and pushing creative limits
           </p>
         </motion.div>
@@ -115,19 +115,19 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Second Parallax Section */}
+      {/* Capturing Moments Parallax Section - Larger */}
       <ParallaxSection
-        backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=600"
-        height="h-96"
+        backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&h=1440"
+        height="h-screen"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center z-10"
+          transition={{ duration: 1 }}
+          className="text-center z-10 px-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">CAPTURING MOMENTS</h2>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+          <h2 className="text-6xl md:text-8xl font-bold mb-8">CAPTURING MOMENTS</h2>
+          <p className="text-xl md:text-3xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Every frame tells a story, every click preserves a memory
           </p>
         </motion.div>
