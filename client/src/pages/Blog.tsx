@@ -7,7 +7,7 @@ import { blogPosts } from "@/data/blogPosts";
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  const postsPerPage = 8;
   
   const posts = blogPosts.filter(post => post.published);
   const totalPosts = posts.length;
