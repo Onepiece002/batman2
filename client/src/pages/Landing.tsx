@@ -197,9 +197,21 @@ export default function Landing() {
           className="text-center z-10 px-4"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">CAPTURING MOMENTS</h2>
-          <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-white">
+          <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-white mb-8">
             Every frame tells a story, every click preserves a memory
           </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <Link href="/about">
+              <button className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold tracking-wider overflow-hidden rounded-lg border-2 border-white/30 hover:border-white hover:bg-white hover:text-dark-primary transform transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <span className="relative z-10">ABOUT ME</span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+            </Link>
+          </motion.div>
         </motion.div>
       </ParallaxSection>
       
