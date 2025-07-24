@@ -32,7 +32,7 @@ This is a modern, responsive portfolio website and blog built with React, TypeSc
 ✓ **Lifted Hero Effect**: Replaced parallax with lifted scroll effect where hero image moves up faster than scroll, revealing content underneath
 ✓ **Fixed Text Colors**: Made all section titles (Rajesh Nunna, Beyond Boundaries, Capturing Moments) white in both light and dark modes
 ✓ **Hero Extension**: Extended hero image to cover navigation area with fixed overlay positioning
-✓ **Custom Night Background**: Updated hero section to custom dark night road image with red light trails
+✓ **Dark Forest Background**: Updated hero section to dark night forest image
 
 ## User Preferences
 
