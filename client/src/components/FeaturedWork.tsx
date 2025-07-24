@@ -27,21 +27,23 @@ export default function FeaturedWork() {
       const sectionTop = rect.top;
       const sectionHeight = rect.height;
       
-      // Start sliding when section is 80% visible from bottom
-      const startPoint = windowHeight * 0.8;
-      // Continue until section is 20% visible from top
-      const endPoint = -sectionHeight * 0.2;
+      // Start sliding when the heading comes into view (section top hits 90% of viewport)
+      const startPoint = windowHeight * 0.9;
+      // Continue until section completely exits viewport
+      const endPoint = -sectionHeight;
       
       if (sectionTop <= startPoint && sectionTop >= endPoint) {
         // Calculate progress (0 to 1)
-        const progress = (startPoint - sectionTop) / (startPoint - endPoint);
+        const totalDistance = startPoint - endPoint;
+        const currentDistance = startPoint - sectionTop;
+        const progress = currentDistance / totalDistance;
         const clampedProgress = Math.max(0, Math.min(1, progress));
         
-        // Apply easing for smoother animation
-        const easedProgress = clampedProgress * clampedProgress * (3 - 2 * clampedProgress);
+        // Apply slower, smoother easing
+        const easedProgress = clampedProgress * clampedProgress * clampedProgress * (clampedProgress * (clampedProgress * 6 - 15) + 10);
         
-        // Set scroll position based on progress
-        setScrollPosition(easedProgress * maxScroll);
+        // Set scroll position based on progress with reduced speed (50% of max scroll)
+        setScrollPosition(easedProgress * maxScroll * 0.5);
       }
     };
 
