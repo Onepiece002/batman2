@@ -39,7 +39,7 @@ export default function About() {
               
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold mb-2">Note</h3>
+                  <h3 className="font-semibold mb-2"> Note </h3>
                   <p className="text-text-secondary">
                     Contact the below socials if you need have any tips.
                   </p>
