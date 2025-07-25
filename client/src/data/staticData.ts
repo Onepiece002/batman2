@@ -301,7 +301,7 @@ export const portfolioImages: PortfolioImage[] = [
     id: 2,
     title: "Urban Architecture",
     description: "Modern architectural photography highlighting geometric patterns and urban design.",
-    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+    imageUrl: "https://res.cloudinary.com/de2g4kioi/image/upload/t_resize1000/ethan-hoover-eIVJAkj1uCs-unsplash_wbetnk",
     category: "architecture",
     orderIndex: 2,
     createdAt: "2024-01-12T14:20:00Z",
