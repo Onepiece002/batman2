@@ -29,19 +29,20 @@ export default function About() {
             >
               <h1 className="text-5xl font-bold mb-6">ABOUT ME</h1>
               <p className="text-text-secondary text-lg mb-6">
-                This is me, you a stranger? I donno how you got here there's nothing to see here. If you got the code from someone, then thanks for visiting!
+                I'm a passionate visual storyteller with over a decade of experience in portrait and lifestyle photography. My work focuses on capturing authentic human moments and emotions that tell compelling stories.
               </p>
               <p className="text-text-secondary text-lg mb-6">
-                Website building is in progress.
+                Based in Toronto, I specialize in creating striking portraits for individuals, artists, and brands who want to make a lasting visual impact. My approach combines technical precision with creative vision to produce images that resonate.
+              </p>
               <p className="text-text-secondary text-lg mb-8">
-               Will update about me page soon.
+                When I'm not behind the camera, you'll find me exploring new locations, experimenting with lighting techniques, or sharing knowledge through workshops and online tutorials.
               </p>
               
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold mb-2"> Note </h3>
+                  <h3 className="font-semibold mb-2">SPECIALTIES</h3>
                   <p className="text-text-secondary">
-                    Contact the below socials if you need have any tips.
+                    Portrait Photography • Lifestyle Shoots • Brand Photography • Creative Direction
                   </p>
                 </div>
                 <div>
