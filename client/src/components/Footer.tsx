@@ -103,7 +103,7 @@ export default function Footer() {
               </div> 
               <p className="text-gray-300 text-sm flex items-center space-x-3"> 
                 <span className="w-4 h-4 flex-shrink-0"></span> 
-                <span>San Francisco, CA</span> 
+                <span>India </span> 
               </p> 
             </div> 
           </div> 
@@ -113,7 +113,7 @@ export default function Footer() {
         <div className="border-t border-gray-700/50 pt-6"> 
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0"> 
             <p className="text-gray-400 text-sm"> 
-              &copy; {currentYear} Rajesh Nunna Photography. All rights reserved. 
+              &copy; {currentYear} Rajesh Nunna. All rights reserved. 
             </p> 
 
             <div className="flex space-x-6 text-xs"> 
